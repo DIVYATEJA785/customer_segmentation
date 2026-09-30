@@ -1,0 +1,289 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | Customer Segmentation Analytics{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div>
+        <h2 class="fw-bold text-slate mb-1">Clustering Analytics Dashboard</h2>
+        <p class="text-muted mb-0">Overview of customer segments, clustering evaluation metrics, and behavioral characteristics.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{{ url_for('predict') }}" class="btn btn-primary-gradient rounded-pill px-3">
+            <i class="bi bi-person-plus-fill me-1"></i> New Customer Prediction
+        </a>
+        <a href="{{ url_for('results') }}" class="btn btn-outline-secondary rounded-pill px-3">
+            <i class="bi bi-download me-1"></i> Clustered Results
+        </a>
+    </div>
+</div>
+
+<!-- Primary Metric Cards -->
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-xl">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Total Customers</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">{{ metrics.total_customers if metrics else '1,000' }}</h3>
+                    <small class="text-success"><i class="bi bi-check-circle me-1"></i> Active Records</small>
+                </div>
+                <div class="stat-icon bg-primary-subtle text-primary">
+                    <i class="bi bi-people-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Clusters (K)</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">{{ metrics.num_clusters if metrics else '5' }}</h3>
+                    <small class="text-muted">Optimal Clusters</small>
+                </div>
+                <div class="stat-icon bg-info-subtle text-info">
+                    <i class="bi bi-diagram-3-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Silhouette Score</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">{{ metrics.silhouette_score if metrics else '0.4852' }}</h3>
+                    <small class="text-success"><i class="bi bi-graph-up-arrow me-1"></i> Strong Cohesion</small>
+                </div>
+                <div class="stat-icon bg-success-subtle text-success">
+                    <i class="bi bi-award-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Avg Annual Income</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">₹{{ "{:,.0f}".format(metrics.avg_income) if metrics else '₹12,50,000' }}</h3>
+                    <small class="text-muted">AOV: ₹{{ "{:,.2f}".format(metrics.avg_order_value) if metrics else '4,500' }}</small>
+                </div>
+                <div class="stat-icon bg-warning-subtle text-warning">
+                    <i class="bi bi-currency-rupee"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Avg Spending Score</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">{{ metrics.avg_spending if metrics else '52.3' }}/100</h3>
+                    <small class="text-muted">Recency: {{ metrics.avg_recency if metrics else '54' }} days</small>
+                </div>
+                <div class="stat-icon bg-danger-subtle text-danger">
+                    <i class="bi bi-bag-check-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Interactive Chart Row: Distribution & Optimization -->
+<div class="row g-4 mb-4">
+    <div class="col-lg-5">
+        <div class="app-card h-100">
+            <div class="app-card-header">
+                <h6 class="fw-bold text-slate mb-0"><i class="bi bi-pie-chart-fill text-primary me-2"></i> Cluster Share Distribution</h6>
+                <span class="badge bg-light text-dark">Live Doughnut</span>
+            </div>
+            <div class="app-card-body">
+                <div style="height: 280px; position: relative;">
+                    <canvas id="interactiveDistChart"></canvas>
+                </div>
+                <div class="mt-3 text-center small text-muted">
+                    Proportion of total customer base belonging to each behavioral segment.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-7">
+        <div class="app-card h-100">
+            <div class="app-card-header">
+                <h6 class="fw-bold text-slate mb-0"><i class="bi bi-bezier2 text-primary me-2"></i> Cluster Quality & Elbow Analysis (K=2 to 10)</h6>
+                <span class="badge bg-light text-dark">Dual Axis</span>
+            </div>
+            <div class="app-card-body">
+                <div style="height: 280px; position: relative;">
+                    <canvas id="interactiveElbowChart"></canvas>
+                </div>
+                <div class="mt-3 text-center small text-muted">
+                    Blue curve shows WCSS drop (Inertia); Cyan dashed line shows Silhouette Score across candidate cluster numbers.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cluster Summary Profile Table -->
+<div class="app-card mb-4">
+    <div class="app-card-header d-flex justify-content-between align-items-center">
+        <div>
+            <h6 class="fw-bold text-slate mb-0"><i class="bi bi-table text-primary me-2"></i> Segment Profile & Statistical Centroids</h6>
+            <small class="text-muted">Dynamic cluster analysis based on actual customer transactions and demographic means.</small>
+        </div>
+        <a href="{{ url_for('download_file', filename='cluster_summary.csv') }}" class="btn btn-sm btn-outline-primary">
+            <i class="bi bi-file-earmark-spreadsheet me-1"></i> Export Summary CSV
+        </a>
+    </div>
+    <div class="app-card-body p-0">
+        <div class="table-responsive">
+            <table class="table custom-table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Cluster</th>
+                        <th>Segment Persona</th>
+                        <th>Customers</th>
+                        <th>Share</th>
+                        <th>Avg Income</th>
+                        <th>Spending Score</th>
+                        <th>Order Value</th>
+                        <th>Frequency</th>
+                        <th>Recency</th>
+                        <th>Online / Offline</th>
+                        <th>Recommended Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for seg in summary %}
+                    <tr>
+                        <td><span class="badge bg-primary-subtle text-primary rounded-pill">#{{ seg.Cluster_ID }}</span></td>
+                        <td>
+                            <strong class="text-slate">{{ seg.Segment_Name }}</strong>
+                            <div class="text-muted small" style="max-width: 200px;">{{ seg.Description }}</div>
+                        </td>
+                        <td class="fw-bold">{{ seg.Customer_Count }}</td>
+                        <td><span class="badge bg-secondary-subtle text-dark">{{ seg.Percentage }}%</span></td>
+                        <td class="text-success fw-semibold">₹{{ "{:,.0f}".format(seg.Annual_Income) }}</td>
+                        <td>
+                            <div class="d-flex align-items-center gap-2">
+                                <span>{{ seg.Spending_Score }}</span>
+                                <div class="progress flex-grow-1" style="height: 6px; width: 60px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: {{ seg.Spending_Score }}%"></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹{{ "{:,.2f}".format(seg.Average_Order_Value) }}</td>
+                        <td>{{ seg.Purchase_Frequency }}/mo</td>
+                        <td>{{ seg.Recency }} days</td>
+                        <td>
+                            <small class="text-muted">{{ seg.Online_Purchases }} on / {{ seg.Offline_Purchases }} off</small>
+                        </td>
+                        <td>
+                            <span class="badge bg-light text-dark border p-2 text-wrap text-start font-monospace" style="font-size: 0.76rem; max-width: 250px;">
+                                {{ seg.Marketing_Strategy }}
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Machine Learning Evaluation Metrics Explained -->
+<div class="app-card mb-4">
+    <div class="app-card-header">
+        <h6 class="fw-bold text-slate mb-0"><i class="bi bi-info-circle-fill text-primary me-2"></i> Unsupervised Clustering Evaluation Metrics</h6>
+    </div>
+    <div class="app-card-body">
+        <div class="row g-3">
+            <div class="col-md-3">
+                <div class="p-3 bg-light rounded-3 h-100 border">
+                    <span class="badge bg-primary mb-2">Silhouette Score</span>
+                    <h4 class="fw-bold text-slate">{{ metrics.silhouette_score if metrics else '0.4852' }}</h4>
+                    <small class="text-muted d-block">Range: -1 to +1 (Higher is better)</small>
+                    <p class="small text-muted mt-2 mb-0">Measures how similar an object is to its own cluster compared to other clusters. Scores > 0.4 indicate well-separated, distinct clusters.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 bg-light rounded-3 h-100 border">
+                    <span class="badge bg-info text-dark mb-2">Davies-Bouldin Index</span>
+                    <h4 class="fw-bold text-slate">{{ metrics.davies_bouldin_index if metrics else '0.8859' }}</h4>
+                    <small class="text-muted d-block">Range: 0 to &infin; (Lower is better)</small>
+                    <p class="small text-muted mt-2 mb-0">Measures the average similarity between each cluster and its most similar one. Values below 1.0 signify compact clusters that are well-separated.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 bg-light rounded-3 h-100 border">
+                    <span class="badge bg-success mb-2">Calinski-Harabasz Score</span>
+                    <h4 class="fw-bold text-slate">{{ metrics.calinski_harabasz_score if metrics else '1065.72' }}</h4>
+                    <small class="text-muted d-block">Variance Ratio Criterion (Higher is better)</small>
+                    <p class="small text-muted mt-2 mb-0">Ratio of the sum of between-cluster dispersion to within-cluster dispersion. High values validate tightly grouped, distinct clusters.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 bg-light rounded-3 h-100 border">
+                    <span class="badge bg-secondary mb-2">WCSS / Inertia</span>
+                    <h4 class="fw-bold text-slate">{{ metrics.wcss if metrics else '2081.64' }}</h4>
+                    <small class="text-muted d-block">Within-Cluster Sum of Squares</small>
+                    <p class="small text-muted mt-2 mb-0">Measures the internal tightness of clusters. Decreases as K increases; optimal point is identified via the Elbow curve inflection.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- High-Resolution Visualizations Gallery -->
+<div class="app-card mb-4">
+    <div class="app-card-header d-flex justify-content-between align-items-center">
+        <h6 class="fw-bold text-slate mb-0"><i class="bi bi-images text-primary me-2"></i> Statistical Visualization Gallery</h6>
+        <span class="text-muted small">Generated via Matplotlib & Seaborn</span>
+    </div>
+    <div class="app-card-body">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="plot-img-container">
+                    <img src="{{ url_for('serve_plot', filename='income_vs_spending.png') }}" alt="Income vs Spending Score">
+                    <div class="p-2 small text-center text-muted fw-semibold border-top">Income vs Spending Score</div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="plot-img-container">
+                    <img src="{{ url_for('serve_plot', filename='pca_2d_clusters.png') }}" alt="2D PCA Clusters">
+                    <div class="p-2 small text-center text-muted fw-semibold border-top">2D PCA Dimensional Projection</div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="plot-img-container">
+                    <img src="{{ url_for('serve_plot', filename='age_vs_spending.png') }}" alt="Age vs Spending Score">
+                    <div class="p-2 small text-center text-muted fw-semibold border-top">Age vs Spending Score</div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="plot-img-container">
+                    <img src="{{ url_for('serve_plot', filename='frequency_vs_spending.png') }}" alt="Frequency vs Spending Score">
+                    <div class="p-2 small text-center text-muted fw-semibold border-top">Purchase Frequency vs Spending</div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="plot-img-container">
+                    <img src="{{ url_for('serve_plot', filename='cluster_distribution.png') }}" alt="Customer Count Distribution">
+                    <div class="p-2 small text-center text-muted fw-semibold border-top">Customer Distribution Bar Chart</div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="plot-img-container">
+                    <img src="{{ url_for('serve_plot', filename='correlation_heatmap.png') }}" alt="Correlation Heatmap">
+                    <div class="p-2 small text-center text-muted fw-semibold border-top">Feature Correlation Heatmap</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

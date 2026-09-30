@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block title %}Customer Segmentation Using Machine Learning-Based Clustering{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-banner mb-5">
+    <div class="row align-items-center">
+        <div class="col-lg-8">
+            <span class="badge bg-indigo-subtle text-white bg-opacity-25 px-3 py-2 rounded-pill mb-3">
+                <i class="bi bi-cpu-fill me-1"></i> Unsupervised Machine Learning System
+            </span>
+            <h1 class="display-5 fw-bold mb-3">Customer Segmentation Using Machine Learning-Based Clustering</h1>
+            <p class="lead text-white-50 mb-4 pe-lg-4">
+                An end-to-end intelligent customer intelligence platform designed for modern e-commerce and retail. 
+                Using <strong>K-Means Clustering</strong>, <strong>StandardScaler</strong>, and <strong>Silhouette Analysis</strong>, 
+                this system automatically discovers natural behavioral personas to drive precision marketing and maximize customer lifetime value.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+                <a href="{{ url_for('dashboard') }}" class="btn btn-primary-gradient px-4 py-2 rounded-pill">
+                    <i class="bi bi-speedometer2 me-2"></i> Open Dashboard
+                </a>
+                <a href="{{ url_for('predict') }}" class="btn btn-outline-light px-4 py-2 rounded-pill">
+                    <i class="bi bi-person-check-fill me-2"></i> Predict Customer
+                </a>
+                <a href="{{ url_for('dataset_view') }}" class="btn btn-light px-4 py-2 rounded-pill text-dark">
+                    <i class="bi bi-cloud-arrow-up-fill me-2"></i> Upload / View Dataset
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center mt-4 mt-lg-0 d-none d-lg-block">
+            <div class="p-4 bg-white bg-opacity-10 rounded-4 border border-white border-opacity-10 backdrop-blur">
+                <div class="display-4 fw-bold text-white mb-1">{{ metrics.num_clusters if metrics else '5' }}</div>
+                <div class="text-white-50 text-uppercase small fw-semibold tracking-wider">Identified Segments</div>
+                <hr class="border-white border-opacity-25 my-3">
+                <div class="d-flex justify-content-around text-center">
+                    <div>
+                        <div class="h5 fw-bold text-white mb-0">{{ metrics.total_customers if metrics else '1,000' }}</div>
+                        <small class="text-white-50">Customers</small>
+                    </div>
+                    <div>
+                        <div class="h5 fw-bold text-info mb-0">{{ metrics.silhouette_score if metrics else '0.485' }}</div>
+                        <small class="text-white-50">Silhouette</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project Key Metrics Bar -->
+<div class="row g-3 mb-5">
+    <div class="col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Total Customers</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">{{ metrics.total_customers if metrics else '1,000' }}</h3>
+                    <small class="text-success"><i class="bi bi-check2-circle me-1"></i> Preprocessed & Clustered</small>
+                </div>
+                <div class="stat-icon bg-primary-subtle text-primary">
+                    <i class="bi bi-people-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Clustering Algorithm</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">K-Means</h3>
+                    <small class="text-muted">K={{ metrics.num_clusters if metrics else '5' }} Clusters Formed</small>
+                </div>
+                <div class="stat-icon bg-info-subtle text-info">
+                    <i class="bi bi-diagram-3-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Silhouette Score</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">{{ metrics.silhouette_score if metrics else '0.4852' }}</h3>
+                    <small class="text-success"><i class="bi bi-shield-check me-1"></i> High Cluster Validity</small>
+                </div>
+                <div class="stat-icon bg-success-subtle text-success">
+                    <i class="bi bi-stars"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Avg Annual Income</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">₹{{ "{:,.0f}".format(metrics.avg_income) if metrics else '₹12,50,000' }}</h3>
+                    <small class="text-muted">Spending Score: {{ metrics.avg_spending if metrics else '52.3' }}/100</small>
+                </div>
+                <div class="stat-icon bg-warning-subtle text-warning">
+                    <i class="bi bi-cash-stack"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Discovered Customer Personas Cards -->
+<div class="mb-5">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <div>
+            <h4 class="fw-bold text-slate mb-1">Discovered Customer Segments</h4>
+            <p class="text-muted mb-0">Unsupervised clustering extracted 5 behavioral profiles from customer transaction patterns.</p>
+        </div>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline-primary">View Full Analytics <i class="bi bi-arrow-right ms-1"></i></a>
+    </div>
+
+    <div class="row g-3">
+        {% if segments %}
+            {% for seg in segments %}
+            <div class="col-md-6 col-lg-4">
+                <div class="app-card h-100">
+                    <div class="app-card-header d-flex justify-content-between align-items-center">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill">Cluster {{ seg.Cluster_ID }}</span>
+                        <span class="badge bg-secondary-subtle text-secondary rounded-pill">{{ seg.Customer_Count }} Users ({{ seg.Percentage }}%)</span>
+                    </div>
+                    <div class="app-card-body">
+                        <h5 class="fw-bold text-slate mb-2">{{ seg.Segment_Name }}</h5>
+                        <p class="text-muted small mb-3">{{ seg.Description }}</p>
+                        
+                        <div class="bg-light p-3 rounded-3 mb-3 small">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="text-muted">Avg Income:</span>
+                                <span class="fw-semibold text-dark">₹{{ "{:,.0f}".format(seg.Annual_Income) }}</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="text-muted">Spending Score:</span>
+                                <span class="fw-semibold text-dark">{{ seg.Spending_Score }}/100</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="text-muted">Avg Order Value:</span>
+                                <span class="fw-semibold text-dark">₹{{ "{:,.0f}".format(seg.Average_Order_Value) }}</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted">Recency:</span>
+                                <span class="fw-semibold text-dark">{{ seg.Recency }} days</span>
+                            </div>
+                        </div>
+
+                        <div class="border-top pt-2">
+                            <span class="d-block text-xs fw-bold text-uppercase text-primary mb-1">Marketing Action:</span>
+                            <p class="text-muted small mb-0">{{ seg.Marketing_Strategy }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-12 text-center py-4">
+                <div class="alert alert-info">Train the model to see discovered customer segments.</div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Project Architecture & Methodology -->
+<div class="app-card mb-5">
+    <div class="app-card-header">
+        <h5 class="fw-bold text-slate mb-0"><i class="bi bi-gear-wide-connected text-primary me-2"></i> End-to-End Machine Learning Pipeline Architecture</h5>
+    </div>
+    <div class="app-card-body">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-box-icon bg-primary-subtle text-primary">
+                        <i class="bi bi-database-check"></i>
+                    </div>
+                    <h6 class="fw-bold text-slate">1. Data Ingestion & Preprocessing</h6>
+                    <p class="text-muted small mb-0">
+                        Loads multi-feature customer records. Handles missing values, performs deduplication, encodes categorical variables (Gender), and normalizes features using <strong>StandardScaler</strong>.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-box-icon bg-info-subtle text-info">
+                        <i class="bi bi-graph-up"></i>
+                    </div>
+                    <h6 class="fw-bold text-slate">2. Cluster Optimization & Evaluation</h6>
+                    <p class="text-muted small mb-0">
+                        Tests cluster parameters from K=2 to 10. Automatically evaluates using the <strong>Elbow Method (WCSS)</strong>, <strong>Silhouette Score</strong>, <strong>Davies-Bouldin Index</strong>, and <strong>Calinski-Harabasz Score</strong>.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-box-icon bg-success-subtle text-success">
+                        <i class="bi bi-briefcase"></i>
+                    </div>
+                    <h6 class="fw-bold text-slate">3. Dynamic Profiling & Prediction</h6>
+                    <p class="text-muted small mb-0">
+                        Calculates cluster centroids, dynamically labels business personas, visualizes 2D PCA clusters, and serves real-time single customer inference via the web portal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

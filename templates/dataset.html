@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+
+{% block title %}Dataset & EDA | Customer Segmentation ML{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div>
+        <h2 class="fw-bold text-slate mb-1">Customer Dataset & Exploratory Analysis</h2>
+        <p class="text-muted mb-0">Detailed schema, statistical distributions, missing values analysis, and live dataset preview.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{{ url_for('download_file', filename='customers.csv') }}" class="btn btn-outline-secondary rounded-pill px-3">
+            <i class="bi bi-download me-1"></i> Download Raw CSV
+        </a>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-primary-gradient rounded-pill px-3">
+            <i class="bi bi-speedometer2 me-1"></i> View Dashboard
+        </a>
+    </div>
+</div>
+
+<!-- Dataset Metadata Overview Cards -->
+<div class="row g-3 mb-4">
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Total Records</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">{{ total_rows }}</h3>
+                    <small class="text-success"><i class="bi bi-file-earmark-check me-1"></i> Valid Customer Rows</small>
+                </div>
+                <div class="stat-icon bg-primary-subtle text-primary">
+                    <i class="bi bi-people"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Total Features</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">{{ total_cols }}</h3>
+                    <small class="text-muted">1 Categorical, 10 Numeric</small>
+                </div>
+                <div class="stat-icon bg-info-subtle text-info">
+                    <i class="bi bi-columns"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Missing Values</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">0</h3>
+                    <small class="text-success"><i class="bi bi-shield-check me-1"></i> 100% Complete Data</small>
+                </div>
+                <div class="stat-icon bg-success-subtle text-success">
+                    <i class="bi bi-check2-all"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted small fw-semibold text-uppercase">Duplicates</span>
+                    <h3 class="fw-bold text-slate mt-1 mb-0">{{ duplicates }}</h3>
+                    <small class="text-muted">Filtered during training</small>
+                </div>
+                <div class="stat-icon bg-warning-subtle text-warning">
+                    <i class="bi bi-copy"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Upload New Dataset Section -->
+<div class="app-card mb-4">
+    <div class="app-card-header">
+        <h6 class="fw-bold text-slate mb-0"><i class="bi bi-cloud-arrow-up-fill text-primary me-2"></i> Upload Custom Customer Dataset</h6>
+    </div>
+    <div class="app-card-body">
+        <form action="{{ url_for('upload_dataset') }}" method="POST" enctype="multipart/form-data" class="row g-3 align-items-end">
+            <div class="col-md-6">
+                <label for="datasetFile" class="form-label">Select CSV File</label>
+                <input class="form-control" type="file" id="datasetFile" name="file" accept=".csv" required>
+                <div class="form-text">File must contain columns: Customer_ID, Age, Gender, Annual_Income, Spending_Score, etc.</div>
+            </div>
+            <div class="col-md-3">
+                <label for="k_clusters" class="form-label">Cluster Count (K)</label>
+                <select class="form-select" id="k_clusters" name="k_clusters">
+                    <option value="5" selected>K = 5 (Recommended)</option>
+                    <option value="3">K = 3</option>
+                    <option value="4">K = 4</option>
+                    <option value="6">K = 6</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary-gradient w-100 py-2">
+                    <i class="bi bi-arrow-repeat me-1"></i> Upload & Retrain
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Numerical Statistics Summary Table -->
+<div class="app-card mb-4">
+    <div class="app-card-header">
+        <h6 class="fw-bold text-slate mb-0"><i class="bi bi-calculator text-primary me-2"></i> Numerical Descriptive Statistics</h6>
+    </div>
+    <div class="app-card-body p-0">
+        <div class="table-responsive">
+            <table class="table custom-table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Age</th>
+                        <th>Annual Income (₹)</th>
+                        <th>Spending Score</th>
+                        <th>Frequency</th>
+                        <th>Avg Order Value (₹)</th>
+                        <th>Total Purchases</th>
+                        <th>Recency (days)</th>
+                        <th>Website Visits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set stat_metrics = ['count', 'mean', 'std', 'min', '25%', '50%', '75%', 'max'] %}
+                    {% for m in stat_metrics %}
+                    <tr>
+                        <td class="fw-bold text-uppercase text-secondary font-monospace">{{ m }}</td>
+                        <td>{{ stats.get('Age', {}).get(m, '-') }}</td>
+                        <td>₹{{ "{:,.2f}".format(stats.get('Annual_Income', {}).get(m, 0)) if m != 'count' else stats.get('Annual_Income', {}).get(m, '-') }}</td>
+                        <td>{{ stats.get('Spending_Score', {}).get(m, '-') }}</td>
+                        <td>{{ stats.get('Purchase_Frequency', {}).get(m, '-') }}</td>
+                        <td>₹{{ "{:,.2f}".format(stats.get('Average_Order_Value', {}).get(m, 0)) if m != 'count' else stats.get('Average_Order_Value', {}).get(m, '-') }}</td>
+                        <td>{{ stats.get('Total_Purchases', {}).get(m, '-') }}</td>
+                        <td>{{ stats.get('Recency', {}).get(m, '-') }}</td>
+                        <td>{{ stats.get('Website_Visits', {}).get(m, '-') }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Dataset Live Preview Table -->
+<div class="app-card mb-4">
+    <div class="app-card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h6 class="fw-bold text-slate mb-0"><i class="bi bi-table text-primary me-2"></i> Raw Data Preview (First 50 Rows)</h6>
+        <div class="d-flex align-items-center gap-2">
+            <input type="text" id="tableSearchInput" class="form-control form-control-sm" placeholder="Search table..." style="width: 220px;">
+        </div>
+    </div>
+    <div class="app-card-body p-0">
+        <div class="table-responsive" style="max-height: 520px; overflow-y: auto;">
+            <table class="table custom-table table-hover mb-0" id="searchableTable">
+                <thead class="sticky-top">
+                    <tr>
+                        {% for col in columns %}
+                        <th>{{ col.replace('_', ' ') }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in preview %}
+                    <tr>
+                        {% for col in columns %}
+                        <td>
+                            {% if col == 'Customer_ID' %}
+                                <span class="badge bg-light text-dark font-monospace">{{ row[col] }}</span>
+                            {% elif col == 'Annual_Income' or col == 'Average_Order_Value' %}
+                                ₹{{ "{:,.2f}".format(row[col]) }}
+                            {% elif col == 'Gender' %}
+                                <span class="badge {% if row[col] == 'Female' %}bg-danger-subtle text-danger{% else %}bg-primary-subtle text-primary{% endif %} rounded-pill">
+                                    {{ row[col] }}
+                                </span>
+                            {% else %}
+                                {{ row[col] }}
+                            {% endif %}
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- EDA Visualizations Row -->
+<div class="row g-4 mb-4">
+    <div class="col-lg-6">
+        <div class="app-card h-100">
+            <div class="app-card-header">
+                <h6 class="fw-bold text-slate mb-0">Feature Correlation Heatmap</h6>
+            </div>
+            <div class="app-card-body p-2 text-center">
+                <img src="{{ url_for('serve_plot', filename='correlation_heatmap.png') }}" class="img-fluid rounded-3" alt="Correlation Heatmap">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="app-card h-100">
+            <div class="app-card-header">
+                <h6 class="fw-bold text-slate mb-0">Cluster Feature Boxplots</h6>
+            </div>
+            <div class="app-card-body p-2 text-center">
+                <img src="{{ url_for('serve_plot', filename='cluster_boxplots.png') }}" class="img-fluid rounded-3" alt="Cluster Boxplots">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

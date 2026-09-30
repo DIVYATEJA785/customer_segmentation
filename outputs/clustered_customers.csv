@@ -1,0 +1,1001 @@
+Customer_ID,Age,Gender,Annual_Income,Spending_Score,Purchase_Frequency,Average_Order_Value,Total_Purchases,Recency,Online_Purchases,Offline_Purchases,Website_Visits,Cluster_ID,Segment_Name
+C0001,26,Male,871130,85,21,2589.9,63,2,46,17,34,2,Young Impulse Trendsetters
+C0002,47,Male,2205808,32,6,7078.05,16,70,7,9,6,3,Affluent Conservative Savers
+C0003,48,Female,2150856,32,9,5639.19,18,24,8,10,6,3,Affluent Conservative Savers
+C0004,68,Female,2209049,14,3,7431.31,7,55,3,4,3,3,Affluent Conservative Savers
+C0005,50,Female,378027,27,10,923.21,18,28,4,14,10,4,Budget-Conscious Shoppers
+C0006,51,Female,2047693,27,5,7737.37,13,46,5,8,10,3,Affluent Conservative Savers
+C0007,18,Male,795257,83,17,3625.39,42,1,38,4,41,2,Young Impulse Trendsetters
+C0008,24,Female,692747,78,23,2787.04,52,2,46,6,30,2,Young Impulse Trendsetters
+C0009,49,Male,1092976,54,2,2081.98,3,158,1,2,3,1,At-Risk Occasional Customers
+C0010,51,Female,2150564,86,25,7410.24,86,1,46,40,31,0,High-Value Champions
+C0011,48,Female,2509198,26,5,8900.76,11,69,4,7,13,3,Affluent Conservative Savers
+C0012,25,Female,2457149,91,27,8130.71,76,3,42,34,34,0,High-Value Champions
+C0013,23,Female,621713,90,20,2620.67,57,9,50,7,40,2,Young Impulse Trendsetters
+C0014,47,Male,721524,43,3,2872.64,6,142,3,3,4,1,At-Risk Occasional Customers
+C0015,41,Male,1084648,52,1,1874.62,3,212,2,1,3,1,At-Risk Occasional Customers
+C0016,29,Male,1074574,40,1,2160.15,3,212,1,2,3,1,At-Risk Occasional Customers
+C0017,34,Female,451834,17,9,1042.42,18,29,5,13,9,4,Budget-Conscious Shoppers
+C0018,52,Female,728501,56,2,2225.14,3,184,2,1,2,1,At-Risk Occasional Customers
+C0019,65,Male,2289160,29,4,6682.92,9,25,4,5,9,3,Affluent Conservative Savers
+C0020,55,Male,412509,33,5,850.72,13,28,3,10,6,4,Budget-Conscious Shoppers
+C0021,23,Female,712340,80,21,2777.29,46,1,40,6,33,2,Young Impulse Trendsetters
+C0022,37,Male,2325626,75,28,8898.83,99,15,52,47,34,0,High-Value Champions
+C0023,46,Female,512287,33,7,549.22,15,46,6,9,9,4,Budget-Conscious Shoppers
+C0024,28,Male,843461,81,19,2717.26,60,22,49,11,39,2,Young Impulse Trendsetters
+C0025,43,Male,2204851,92,27,8351.22,92,9,58,34,33,0,High-Value Champions
+C0026,50,Male,368681,27,11,1152.27,22,65,5,17,10,4,Budget-Conscious Shoppers
+C0027,44,Female,2026197,78,34,9487.68,104,2,47,57,26,0,High-Value Champions
+C0028,42,Female,752768,39,5,2071.11,10,165,5,5,8,1,At-Risk Occasional Customers
+C0029,55,Male,953507,35,1,1816.81,3,172,1,2,5,1,At-Risk Occasional Customers
+C0030,43,Female,809625,39,1,3320.54,3,192,1,2,6,1,At-Risk Occasional Customers
+C0031,51,Male,443852,32,10,1171.09,18,48,5,13,9,4,Budget-Conscious Shoppers
+C0032,27,Female,2171917,98,23,9419.96,78,28,48,30,28,0,High-Value Champions
+C0033,25,Female,711210,74,28,2624.21,67,2,57,10,39,2,Young Impulse Trendsetters
+C0034,23,Female,656593,89,23,2496.55,57,6,43,14,33,2,Young Impulse Trendsetters
+C0035,44,Female,413529,12,8,1279.79,15,46,4,11,6,4,Budget-Conscious Shoppers
+C0036,31,Female,2076054,75,25,11445.92,71,1,40,31,25,0,High-Value Champions
+C0037,57,Male,2419053,26,2,7395.82,6,39,2,4,15,3,Affluent Conservative Savers
+C0038,21,Female,524863,76,22,2988.36,59,6,53,6,40,2,Young Impulse Trendsetters
+C0039,57,Male,832014,50,1,2604.26,3,211,1,2,2,1,At-Risk Occasional Customers
+C0040,44,Male,2001269,87,28,9036.85,106,1,65,41,35,0,High-Value Champions
+C0041,25,Male,431487,22,7,1576.91,15,34,6,9,10,4,Budget-Conscious Shoppers
+C0042,49,Female,2205690,83,24,7741.51,90,17,50,40,30,0,High-Value Champions
+C0043,51,Female,404759,16,8,1186.2,18,52,5,13,12,4,Budget-Conscious Shoppers
+C0044,42,Female,694282,55,2,2585.01,4,141,2,2,4,1,At-Risk Occasional Customers
+C0045,53,Male,397689,29,7,848.7,17,15,7,10,5,4,Budget-Conscious Shoppers
+C0046,38,Female,491765,32,9,915.58,20,49,4,16,11,4,Budget-Conscious Shoppers
+C0047,37,Female,846990,57,6,2874.36,11,193,6,5,6,1,At-Risk Occasional Customers
+C0048,22,Female,692065,85,21,2647.07,58,21,42,16,32,2,Young Impulse Trendsetters
+C0049,34,Male,544703,13,11,1106.83,22,42,7,15,7,4,Budget-Conscious Shoppers
+C0050,72,Female,2030829,20,10,7061.67,28,34,11,17,12,3,Affluent Conservative Savers
+C0051,19,Male,695740,78,18,3094.53,39,3,35,4,38,2,Young Impulse Trendsetters
+C0052,45,Female,950957,33,1,2139.46,3,203,2,1,5,1,At-Risk Occasional Customers
+C0053,35,Female,443537,22,6,1027.36,12,70,4,8,7,4,Budget-Conscious Shoppers
+C0054,22,Male,651825,88,19,2811.16,59,28,44,15,32,2,Young Impulse Trendsetters
+C0055,43,Male,2900000,93,31,8755.53,99,4,46,53,28,0,High-Value Champions
+C0056,40,Male,1957524,74,33,7823.35,114,28,60,54,38,0,High-Value Champions
+C0057,23,Female,724734,81,22,2895.77,61,10,45,16,35,2,Young Impulse Trendsetters
+C0058,35,Female,1971361,93,26,5579.31,79,1,41,38,29,0,High-Value Champions
+C0059,36,Male,427092,25,6,1120.98,15,38,4,11,8,4,Budget-Conscious Shoppers
+C0060,56,Female,2124604,21,2,5750.15,6,54,2,4,12,3,Affluent Conservative Savers
+C0061,40,Female,391846,33,5,1105.15,10,49,4,6,4,4,Budget-Conscious Shoppers
+C0062,33,Male,1718128,74,31,8530.46,95,1,46,49,28,0,High-Value Champions
+C0063,24,Male,896833,79,19,2603.26,44,35,38,6,28,2,Young Impulse Trendsetters
+C0064,33,Male,1893096,87,18,11487.54,69,28,37,32,26,0,High-Value Champions
+C0065,22,Female,450000,78,16,2761.81,42,13,31,11,39,2,Young Impulse Trendsetters
+C0066,43,Male,2126897,21,8,8452.29,18,32,7,11,8,3,Affluent Conservative Savers
+C0067,47,Female,1973610,17,5,7747.67,14,45,6,8,5,3,Affluent Conservative Savers
+C0068,37,Female,660190,53,3,2322.38,4,142,2,2,5,1,At-Risk Occasional Customers
+C0069,38,Female,1784433,86,28,7754.68,103,2,65,38,28,0,High-Value Champions
+C0070,25,Male,548908,93,20,3584.07,46,1,38,8,50,2,Young Impulse Trendsetters
+C0071,32,Male,1982535,91,30,7957.19,87,10,51,36,25,0,High-Value Champions
+C0072,21,Male,804897,75,21,3087.96,63,6,48,15,30,2,Young Impulse Trendsetters
+C0073,24,Female,767117,92,16,2164.94,44,1,35,9,37,2,Young Impulse Trendsetters
+C0074,54,Female,1876433,24,4,6807.33,11,48,5,6,11,3,Affluent Conservative Savers
+C0075,44,Female,383867,30,8,1282.99,16,56,7,9,7,4,Budget-Conscious Shoppers
+C0076,56,Female,577006,24,10,1535.37,20,51,7,13,5,4,Budget-Conscious Shoppers
+C0077,24,Male,799469,78,19,3142.75,47,4,41,6,42,2,Young Impulse Trendsetters
+C0078,41,Female,2053022,88,28,11003.34,101,6,58,43,30,0,High-Value Champions
+C0079,23,Male,717822,87,14,3332.88,44,9,35,9,44,2,Young Impulse Trendsetters
+C0080,53,Female,253270,36,7,1271.83,12,21,3,9,7,4,Budget-Conscious Shoppers
+C0081,60,Female,1989262,27,5,7431.65,14,88,6,8,7,3,Affluent Conservative Savers
+C0082,57,Female,2081013,96,30,8738.55,89,8,51,38,30,0,High-Value Champions
+C0083,43,Male,314460,22,6,1184.12,13,40,4,9,9,4,Budget-Conscious Shoppers
+C0084,51,Male,1927308,85,31,11292.56,101,1,52,49,30,0,High-Value Champions
+C0085,25,Female,351169,24,7,819.86,16,41,4,12,4,4,Budget-Conscious Shoppers
+C0086,23,Female,777129,88,24,2469.34,58,35,43,15,28,2,Young Impulse Trendsetters
+C0087,43,Male,1150335,47,6,2145.38,9,160,5,4,4,1,At-Risk Occasional Customers
+C0088,50,Male,2189217,12,4,8056.78,9,36,3,6,11,3,Affluent Conservative Savers
+C0089,53,Female,2404148,11,7,7142.9,19,64,9,10,14,3,Affluent Conservative Savers
+C0090,47,Male,516042,24,4,920.7,10,54,3,7,7,4,Budget-Conscious Shoppers
+C0091,45,Female,316519,18,4,1534.23,10,62,4,6,7,4,Budget-Conscious Shoppers
+C0092,38,Female,294957,15,10,1113.17,22,50,6,16,10,4,Budget-Conscious Shoppers
+C0093,21,Male,897047,79,20,2344.14,45,8,33,12,27,2,Young Impulse Trendsetters
+C0094,39,Female,1625421,88,24,7811.19,75,12,35,40,28,0,High-Value Champions
+C0095,72,Male,2262868,23,5,5488.41,14,81,5,9,10,3,Affluent Conservative Savers
+C0096,58,Male,402054,24,6,1148.47,15,56,4,11,8,4,Budget-Conscious Shoppers
+C0097,38,Male,2291980,10,4,6405.76,11,77,5,6,8,3,Affluent Conservative Savers
+C0098,36,Female,2398812,80,31,8169.6,97,3,48,49,23,0,High-Value Champions
+C0099,41,Female,2109572,79,24,10160.75,92,4,57,35,30,0,High-Value Champions
+C0100,50,Female,2200466,19,6,7513.43,15,27,8,7,6,3,Affluent Conservative Savers
+C0101,43,Male,2599400,23,5,7095.08,14,62,8,6,8,3,Affluent Conservative Savers
+C0102,55,Female,554111,17,5,1484.33,9,31,3,6,8,4,Budget-Conscious Shoppers
+C0103,56,Male,924275,40,1,2695.14,3,254,1,2,5,1,At-Risk Occasional Customers
+C0104,44,Female,304028,30,5,1221.89,9,50,2,7,7,4,Budget-Conscious Shoppers
+C0105,21,Female,677323,68,19,2446.81,60,10,52,8,48,2,Young Impulse Trendsetters
+C0106,21,Female,724501,86,22,3222.43,52,10,46,6,30,2,Young Impulse Trendsetters
+C0107,26,Female,827098,78,18,2283.02,46,14,38,8,39,2,Young Impulse Trendsetters
+C0108,56,Male,926686,38,3,2841.0,6,128,3,3,5,1,At-Risk Occasional Customers
+C0109,40,Male,2173825,85,25,9473.07,99,2,58,41,23,0,High-Value Champions
+C0110,31,Female,892372,41,9,2588.57,18,224,9,9,8,1,At-Risk Occasional Customers
+C0111,26,Female,565992,97,23,2233.42,58,22,44,14,42,2,Young Impulse Trendsetters
+C0112,58,Female,2609727,21,4,6434.62,8,67,3,5,10,3,Affluent Conservative Savers
+C0113,45,Female,1007518,40,6,1645.99,12,194,6,6,3,1,At-Risk Occasional Customers
+C0114,62,Male,2327918,16,4,8183.15,11,39,5,6,7,3,Affluent Conservative Savers
+C0115,50,Female,2097173,91,29,7015.59,82,20,37,45,30,0,High-Value Champions
+C0116,54,Male,386791,17,8,1542.51,15,20,6,9,8,4,Budget-Conscious Shoppers
+C0117,39,Female,1816112,86,32,8778.23,93,5,43,50,27,0,High-Value Champions
+C0118,44,Male,940083,49,1,2286.54,3,174,1,2,1,1,At-Risk Occasional Customers
+C0119,26,Female,1050000,79,21,2722.45,52,3,43,9,29,2,Young Impulse Trendsetters
+C0120,39,Male,404282,26,8,1033.43,16,42,4,12,4,4,Budget-Conscious Shoppers
+C0121,65,Female,1093355,36,3,2677.47,6,135,3,3,6,1,At-Risk Occasional Customers
+C0122,60,Male,650000,16,8,679.48,15,37,3,12,9,4,Budget-Conscious Shoppers
+C0123,48,Female,2097720,17,4,6967.03,8,44,4,4,10,3,Affluent Conservative Savers
+C0124,43,Female,486083,35,7,1203.95,16,43,6,10,9,4,Budget-Conscious Shoppers
+C0125,52,Female,385062,23,12,1138.24,23,33,10,13,4,4,Budget-Conscious Shoppers
+C0126,24,Female,664229,84,14,2541.53,36,7,29,7,40,2,Young Impulse Trendsetters
+C0127,22,Female,590298,68,22,2723.16,68,19,49,19,23,2,Young Impulse Trendsetters
+C0128,43,Female,419256,26,11,1114.28,30,30,7,23,9,4,Budget-Conscious Shoppers
+C0129,35,Female,1121037,38,4,2393.71,8,163,5,3,4,1,At-Risk Occasional Customers
+C0130,70,Female,1976252,24,5,6641.88,14,32,7,7,13,3,Affluent Conservative Savers
+C0131,22,Female,678801,95,16,2803.13,38,10,32,6,33,2,Young Impulse Trendsetters
+C0132,52,Female,963697,44,2,3136.69,4,151,2,2,3,1,At-Risk Occasional Customers
+C0133,27,Female,422031,10,7,1027.57,19,48,6,13,7,4,Budget-Conscious Shoppers
+C0134,40,Male,954916,48,2,2434.91,3,172,1,2,5,1,At-Risk Occasional Customers
+C0135,24,Male,857844,78,22,3276.45,57,35,46,11,39,2,Young Impulse Trendsetters
+C0136,35,Female,1933089,81,25,5746.96,99,1,52,47,31,0,High-Value Champions
+C0137,44,Male,1797180,87,25,9680.4,75,11,46,29,27,0,High-Value Champions
+C0138,34,Male,1824423,85,30,8193.77,101,2,58,43,31,0,High-Value Champions
+C0139,40,Male,1791341,89,22,11127.94,78,12,50,28,37,0,High-Value Champions
+C0140,37,Male,1960854,85,30,9416.55,98,1,47,51,21,0,High-Value Champions
+C0141,36,Female,2199483,77,30,9666.49,96,1,56,40,35,0,High-Value Champions
+C0142,35,Female,468537,22,9,1421.91,22,57,8,14,7,4,Budget-Conscious Shoppers
+C0143,63,Female,2509683,21,2,5860.35,6,74,2,4,3,3,Affluent Conservative Savers
+C0144,43,Female,347379,34,9,1457.65,23,58,6,17,5,4,Budget-Conscious Shoppers
+C0145,35,Male,1035296,51,7,2506.22,11,133,6,5,1,1,At-Risk Occasional Customers
+C0146,39,Male,1011703,52,4,2060.46,7,167,3,4,5,1,At-Risk Occasional Customers
+C0147,63,Male,2048232,24,4,5761.52,9,44,4,5,6,3,Affluent Conservative Savers
+C0148,34,Female,333133,32,9,1137.07,18,62,5,13,9,4,Budget-Conscious Shoppers
+C0149,58,Male,2578456,15,7,8515.68,16,65,6,10,9,3,Affluent Conservative Savers
+C0150,43,Female,435233,27,6,1208.61,13,27,5,8,7,4,Budget-Conscious Shoppers
+C0151,28,Male,788539,90,23,2842.43,66,6,56,10,31,2,Young Impulse Trendsetters
+C0152,31,Female,2156704,87,33,6905.16,98,3,61,37,22,0,High-Value Champions
+C0153,56,Male,796006,44,3,2225.18,6,150,4,2,3,1,At-Risk Occasional Customers
+C0154,42,Female,378584,23,12,844.08,28,26,6,22,5,4,Budget-Conscious Shoppers
+C0155,41,Male,892577,43,3,2824.62,5,240,3,2,1,1,At-Risk Occasional Customers
+C0156,29,Female,832762,72,19,2807.85,47,3,38,9,29,2,Young Impulse Trendsetters
+C0157,40,Female,474840,36,7,1367.16,13,68,3,10,8,4,Budget-Conscious Shoppers
+C0158,54,Female,2304589,29,6,6402.69,16,63,6,10,13,3,Affluent Conservative Savers
+C0159,36,Female,1946186,89,32,6071.08,123,4,75,48,29,0,High-Value Champions
+C0160,38,Male,1120343,35,1,3228.9,3,184,1,2,1,1,At-Risk Occasional Customers
+C0161,23,Female,995099,83,20,2998.23,49,10,40,9,32,2,Young Impulse Trendsetters
+C0162,48,Female,2062721,30,2,7835.16,6,46,2,4,10,3,Affluent Conservative Savers
+C0163,19,Female,727627,79,20,3064.89,59,15,50,9,42,2,Young Impulse Trendsetters
+C0164,30,Female,680829,91,21,1791.62,52,12,44,8,38,2,Young Impulse Trendsetters
+C0165,40,Female,877913,33,1,1508.62,3,272,2,1,4,1,At-Risk Occasional Customers
+C0166,53,Male,2028465,18,7,5634.26,16,40,6,10,14,3,Affluent Conservative Savers
+C0167,44,Female,353355,15,3,1335.46,7,69,3,4,7,4,Budget-Conscious Shoppers
+C0168,48,Male,2178614,23,5,7600.19,11,55,4,7,11,3,Affluent Conservative Savers
+C0169,36,Female,371312,18,4,1257.33,8,70,3,5,9,4,Budget-Conscious Shoppers
+C0170,43,Male,414864,27,8,1373.76,19,23,5,14,8,4,Budget-Conscious Shoppers
+C0171,47,Male,508472,20,6,1219.54,14,41,4,10,9,4,Budget-Conscious Shoppers
+C0172,18,Male,588639,77,16,3190.83,39,29,30,9,26,2,Young Impulse Trendsetters
+C0173,37,Male,2151799,79,25,9180.56,84,8,50,34,33,0,High-Value Champions
+C0174,36,Male,823505,53,4,1265.28,8,257,3,5,5,1,At-Risk Occasional Customers
+C0175,26,Male,657229,79,17,2900.01,52,8,45,7,38,2,Young Impulse Trendsetters
+C0176,49,Male,435638,23,8,566.94,19,47,6,13,8,4,Budget-Conscious Shoppers
+C0177,56,Female,535879,34,7,1126.43,14,37,4,10,5,4,Budget-Conscious Shoppers
+C0178,42,Female,465764,23,10,1116.48,19,32,7,12,7,4,Budget-Conscious Shoppers
+C0179,49,Female,2118861,26,2,7424.76,6,18,3,3,11,3,Affluent Conservative Savers
+C0180,42,Male,2137228,30,7,7879.86,18,42,7,11,7,3,Affluent Conservative Savers
+C0181,25,Female,812154,75,19,2140.89,60,7,48,12,45,2,Young Impulse Trendsetters
+C0182,60,Female,2035770,19,8,8548.23,19,54,9,10,12,3,Affluent Conservative Savers
+C0183,38,Male,490353,16,10,1278.28,25,41,6,19,12,4,Budget-Conscious Shoppers
+C0184,25,Male,664864,83,17,2574.05,37,6,30,7,31,2,Young Impulse Trendsetters
+C0185,52,Male,761515,58,3,2670.33,5,164,3,2,3,1,At-Risk Occasional Customers
+C0186,34,Male,2346662,82,22,8580.3,83,7,48,35,31,0,High-Value Champions
+C0187,47,Male,547187,28,10,864.47,22,53,7,15,6,4,Budget-Conscious Shoppers
+C0188,30,Female,454067,26,4,1465.99,10,64,4,6,8,4,Budget-Conscious Shoppers
+C0189,39,Female,1057939,39,3,2836.03,4,230,2,2,4,1,At-Risk Occasional Customers
+C0190,49,Male,2329709,19,6,7991.23,14,47,7,7,9,3,Affluent Conservative Savers
+C0191,44,Female,982125,49,2,1919.56,3,140,2,1,3,1,At-Risk Occasional Customers
+C0192,42,Male,1933249,25,8,7366.71,19,79,9,10,10,3,Affluent Conservative Savers
+C0193,23,Male,624168,93,27,3117.8,65,13,48,17,39,2,Young Impulse Trendsetters
+C0194,48,Male,1842118,88,31,10524.24,97,3,59,38,24,0,High-Value Champions
+C0195,42,Female,2306836,81,27,6695.71,77,4,36,41,19,0,High-Value Champions
+C0196,41,Male,441543,33,6,1499.3,11,22,3,8,8,4,Budget-Conscious Shoppers
+C0197,43,Female,479172,24,6,1110.31,14,43,3,11,6,4,Budget-Conscious Shoppers
+C0198,41,Female,1967633,85,23,8485.18,88,8,46,42,29,0,High-Value Champions
+C0199,22,Male,638031,83,19,2534.13,52,4,42,10,37,2,Young Impulse Trendsetters
+C0200,41,Male,2285845,79,30,8326.09,97,7,45,52,32,0,High-Value Champions
+C0201,36,Female,2081377,86,37,8945.47,110,1,64,46,32,0,High-Value Champions
+C0202,27,Female,773655,82,19,2825.7,55,1,45,10,39,2,Young Impulse Trendsetters
+C0203,51,Female,2337977,18,6,7053.84,14,95,6,8,10,3,Affluent Conservative Savers
+C0204,21,Female,821823,85,19,3250.06,53,5,46,7,52,2,Young Impulse Trendsetters
+C0205,59,Female,2129730,16,10,5551.02,28,47,13,15,11,3,Affluent Conservative Savers
+C0206,27,Female,698261,94,14,3306.81,36,12,27,9,41,2,Young Impulse Trendsetters
+C0207,39,Female,2475340,91,31,8890.26,91,13,53,38,22,0,High-Value Champions
+C0208,26,Male,834685,38,5,3508.6,8,175,4,4,1,1,At-Risk Occasional Customers
+C0209,26,Male,734147,94,18,2694.92,43,7,33,10,53,2,Young Impulse Trendsetters
+C0210,52,Male,2286639,25,4,6281.43,9,46,5,4,16,3,Affluent Conservative Savers
+C0211,34,Female,1751282,87,31,7520.07,122,1,69,53,16,0,High-Value Champions
+C0212,40,Male,2047811,84,28,11211.37,104,1,57,47,26,0,High-Value Champions
+C0213,44,Male,1013526,35,1,2446.14,3,166,2,1,4,1,At-Risk Occasional Customers
+C0214,68,Male,2035877,25,6,6509.12,15,65,7,8,12,3,Affluent Conservative Savers
+C0215,23,Female,549741,83,22,2815.18,68,1,58,10,39,2,Young Impulse Trendsetters
+C0216,42,Female,503896,35,7,1046.96,12,39,5,7,6,4,Budget-Conscious Shoppers
+C0217,52,Male,2313987,13,5,9862.19,13,39,6,7,10,3,Affluent Conservative Savers
+C0218,54,Male,419552,28,5,1103.23,12,34,2,10,10,4,Budget-Conscious Shoppers
+C0219,61,Female,1107230,41,2,2667.09,4,214,2,2,5,1,At-Risk Occasional Customers
+C0220,51,Female,2263710,28,2,7060.45,6,79,3,3,3,3,Affluent Conservative Savers
+C0221,42,Female,345079,19,8,1153.17,18,68,4,14,7,4,Budget-Conscious Shoppers
+C0222,47,Female,2344855,21,3,6449.75,8,48,4,4,8,3,Affluent Conservative Savers
+C0223,46,Female,996923,52,6,2936.03,10,167,6,4,8,1,At-Risk Occasional Customers
+C0224,33,Female,2170971,81,25,6922.5,80,7,47,33,27,0,High-Value Champions
+C0225,54,Female,975297,51,4,2548.15,7,192,3,4,4,1,At-Risk Occasional Customers
+C0226,33,Female,1711047,82,30,11315.44,85,9,41,44,29,0,High-Value Champions
+C0227,26,Male,975714,79,19,3342.07,60,6,47,13,39,2,Young Impulse Trendsetters
+C0228,29,Female,540273,22,6,1192.12,13,49,5,8,6,4,Budget-Conscious Shoppers
+C0229,47,Female,717269,55,4,2335.16,6,223,3,3,7,1,At-Risk Occasional Customers
+C0230,24,Male,663706,84,21,3100.02,60,1,48,12,37,2,Young Impulse Trendsetters
+C0231,34,Male,572913,20,6,1254.78,11,46,5,6,11,4,Budget-Conscious Shoppers
+C0232,38,Male,1111179,41,7,2657.76,11,200,5,6,4,1,At-Risk Occasional Customers
+C0233,23,Male,619590,77,21,3405.99,57,13,48,9,30,2,Young Impulse Trendsetters
+C0234,19,Female,620455,80,19,2489.54,43,2,35,8,38,2,Young Impulse Trendsetters
+C0235,38,Male,2313706,83,29,8513.36,109,3,69,40,32,0,High-Value Champions
+C0236,41,Female,1900552,91,26,7815.54,94,9,59,35,26,0,High-Value Champions
+C0237,60,Male,355131,15,7,1316.59,15,49,3,12,9,4,Budget-Conscious Shoppers
+C0238,54,Male,904771,36,6,2372.62,12,168,7,5,4,1,At-Risk Occasional Customers
+C0239,34,Female,1733194,84,19,8997.24,59,2,33,26,21,0,High-Value Champions
+C0240,55,Female,281503,34,8,1310.75,16,29,7,9,9,4,Budget-Conscious Shoppers
+C0241,35,Male,1979993,79,27,7912.99,105,2,61,44,27,0,High-Value Champions
+C0242,44,Male,1969883,76,22,9081.85,65,8,36,29,17,0,High-Value Champions
+C0243,23,Male,746536,73,20,3252.97,63,3,53,10,45,2,Young Impulse Trendsetters
+C0244,46,Female,2039638,13,4,7364.75,11,39,5,6,13,3,Affluent Conservative Savers
+C0245,22,Male,380021,32,7,1050.16,16,28,6,10,8,4,Budget-Conscious Shoppers
+C0246,49,Female,2097423,88,36,8093.53,103,2,50,53,29,0,High-Value Champions
+C0247,37,Male,399215,25,10,933.94,24,59,8,16,11,4,Budget-Conscious Shoppers
+C0248,30,Female,2228383,78,28,6707.45,97,10,60,37,30,0,High-Value Champions
+C0249,43,Female,2099845,90,28,8991.3,111,28,60,51,26,0,High-Value Champions
+C0250,55,Female,315022,33,9,1467.85,21,75,9,12,11,4,Budget-Conscious Shoppers
+C0251,44,Female,2283413,75,32,7048.72,110,20,66,44,26,0,High-Value Champions
+C0252,42,Male,1013187,54,5,1604.21,10,215,6,4,7,1,At-Risk Occasional Customers
+C0253,43,Male,2279594,20,3,9537.88,6,45,3,3,6,3,Affluent Conservative Savers
+C0254,44,Female,919124,54,1,2846.79,3,198,1,2,10,1,At-Risk Occasional Customers
+C0255,40,Female,407251,14,7,1319.7,13,55,3,10,8,4,Budget-Conscious Shoppers
+C0256,38,Male,512725,21,8,1499.31,17,38,5,12,7,4,Budget-Conscious Shoppers
+C0257,24,Female,716003,80,20,2820.07,54,9,41,13,45,2,Young Impulse Trendsetters
+C0258,39,Female,918593,50,9,2257.19,15,185,8,7,7,1,At-Risk Occasional Customers
+C0259,26,Male,916915,45,3,3228.02,4,215,2,2,7,1,At-Risk Occasional Customers
+C0260,42,Female,1626870,89,31,9483.77,89,4,42,47,31,0,High-Value Champions
+C0261,48,Male,2147947,30,9,9129.64,25,28,10,15,8,3,Affluent Conservative Savers
+C0262,26,Female,791060,84,23,2363.72,65,24,56,9,37,2,Young Impulse Trendsetters
+C0263,41,Male,2061144,90,22,10144.65,64,14,36,28,29,0,High-Value Champions
+C0264,32,Female,485056,27,5,1233.93,12,47,3,9,5,4,Budget-Conscious Shoppers
+C0265,39,Female,474314,23,6,1114.77,14,43,3,11,8,4,Budget-Conscious Shoppers
+C0266,53,Male,808026,50,3,2445.13,5,171,2,3,6,1,At-Risk Occasional Customers
+C0267,60,Female,2074177,24,6,8053.98,13,40,5,8,13,3,Affluent Conservative Savers
+C0268,47,Male,505945,32,8,1589.7,21,38,7,14,6,4,Budget-Conscious Shoppers
+C0269,22,Female,643250,86,17,2188.01,49,9,38,11,45,2,Young Impulse Trendsetters
+C0270,37,Female,354769,16,12,1532.83,26,34,6,20,8,4,Budget-Conscious Shoppers
+C0271,25,Male,864121,94,15,2276.26,35,1,25,10,48,2,Young Impulse Trendsetters
+C0272,38,Female,2002876,86,25,8355.99,98,3,54,44,22,0,High-Value Champions
+C0273,47,Male,979243,62,3,1884.93,5,161,2,3,8,1,At-Risk Occasional Customers
+C0274,29,Male,391437,25,10,1654.81,26,45,6,20,8,4,Budget-Conscious Shoppers
+C0275,18,Male,596794,81,21,2180.52,49,19,42,7,29,2,Young Impulse Trendsetters
+C0276,34,Male,1929578,89,32,8782.83,96,22,54,42,29,0,High-Value Champions
+C0277,25,Female,1877403,95,26,9063.12,93,11,49,44,27,0,High-Value Champions
+C0278,20,Female,678356,85,18,3185.65,41,9,36,5,38,2,Young Impulse Trendsetters
+C0279,48,Female,1881237,87,26,10672.53,86,2,53,33,27,0,High-Value Champions
+C0280,52,Female,2231783,19,4,6235.32,11,36,4,7,7,3,Affluent Conservative Savers
+C0281,20,Male,697619,72,19,2794.5,47,20,41,6,47,2,Young Impulse Trendsetters
+C0282,46,Female,1806404,25,9,10471.43,26,90,11,15,13,3,Affluent Conservative Savers
+C0283,29,Female,323106,29,8,961.52,16,48,4,12,7,4,Budget-Conscious Shoppers
+C0284,50,Female,349614,30,8,1330.77,19,64,8,11,6,4,Budget-Conscious Shoppers
+C0285,39,Male,1956755,91,32,8049.04,103,16,52,51,24,0,High-Value Champions
+C0286,41,Male,2012802,16,3,7163.55,8,47,4,4,10,3,Affluent Conservative Savers
+C0287,33,Female,377929,25,8,1232.77,15,80,5,10,6,4,Budget-Conscious Shoppers
+C0288,49,Male,423639,27,11,1079.56,27,74,8,19,12,4,Budget-Conscious Shoppers
+C0289,47,Female,477230,29,8,1204.9,15,41,4,11,8,4,Budget-Conscious Shoppers
+C0290,61,Female,1008915,47,3,2570.2,4,146,2,2,5,1,At-Risk Occasional Customers
+C0291,26,Female,894311,49,6,2648.22,12,192,6,6,6,1,At-Risk Occasional Customers
+C0292,51,Female,1895559,13,6,6048.38,16,55,8,8,9,3,Affluent Conservative Savers
+C0293,21,Male,561027,81,23,2744.63,68,7,60,8,41,2,Young Impulse Trendsetters
+C0294,22,Female,950773,84,19,2743.76,47,9,35,12,33,2,Young Impulse Trendsetters
+C0295,44,Female,413946,18,8,1500.62,15,49,5,10,10,4,Budget-Conscious Shoppers
+C0296,25,Male,837912,86,17,2556.32,43,21,36,7,37,2,Young Impulse Trendsetters
+C0297,47,Female,831792,53,6,1780.22,9,211,4,5,6,1,At-Risk Occasional Customers
+C0298,22,Female,369609,18,6,1593.85,11,45,4,7,10,4,Budget-Conscious Shoppers
+C0299,42,Male,1895171,94,29,12209.53,96,1,45,51,23,0,High-Value Champions
+C0300,41,Male,1738760,85,27,9393.96,82,7,51,31,30,0,High-Value Champions
+C0301,20,Female,596631,89,18,2228.33,47,5,42,5,35,2,Young Impulse Trendsetters
+C0302,40,Female,336815,24,6,1621.09,13,60,5,8,8,4,Budget-Conscious Shoppers
+C0303,19,Female,804024,89,19,3347.96,60,2,51,9,39,2,Young Impulse Trendsetters
+C0304,42,Female,317677,26,11,908.12,22,52,5,17,9,4,Budget-Conscious Shoppers
+C0305,56,Male,2008372,27,7,7880.41,14,61,7,7,10,3,Affluent Conservative Savers
+C0306,53,Female,916546,50,3,2595.1,5,207,2,3,8,1,At-Risk Occasional Customers
+C0307,53,Female,249821,32,7,1052.3,14,54,6,8,4,4,Budget-Conscious Shoppers
+C0308,28,Male,686601,72,17,3282.38,38,1,33,5,33,2,Young Impulse Trendsetters
+C0309,47,Female,1169257,58,6,3235.86,12,110,7,5,8,1,At-Risk Occasional Customers
+C0310,22,Male,820146,79,24,2626.73,72,31,59,13,26,2,Young Impulse Trendsetters
+C0311,27,Female,721434,82,18,2949.05,54,35,47,7,47,2,Young Impulse Trendsetters
+C0312,23,Male,606720,88,18,2653.03,41,15,32,9,42,2,Young Impulse Trendsetters
+C0313,18,Female,754263,85,16,2801.79,36,11,28,8,41,2,Young Impulse Trendsetters
+C0314,58,Female,2757181,19,6,8671.61,13,36,6,7,7,3,Affluent Conservative Savers
+C0315,46,Female,369894,22,5,773.78,10,46,2,8,7,4,Budget-Conscious Shoppers
+C0316,46,Male,353115,33,7,978.06,15,39,7,8,9,4,Budget-Conscious Shoppers
+C0317,46,Female,543921,30,5,1367.55,11,55,3,8,7,4,Budget-Conscious Shoppers
+C0318,56,Male,504909,23,10,1386.26,19,66,4,15,7,4,Budget-Conscious Shoppers
+C0319,60,Male,2149177,32,10,7719.29,26,20,11,15,12,3,Affluent Conservative Savers
+C0320,46,Female,2173140,89,30,8963.52,111,10,67,44,25,0,High-Value Champions
+C0321,43,Female,1875821,77,30,6823.58,96,12,49,47,24,0,High-Value Champions
+C0322,35,Male,2299577,76,26,8402.82,92,10,58,34,32,0,High-Value Champions
+C0323,39,Female,353019,27,7,1295.1,19,42,7,12,7,4,Budget-Conscious Shoppers
+C0324,18,Female,878885,87,16,2144.54,42,3,36,6,49,2,Young Impulse Trendsetters
+C0325,46,Male,1978005,18,7,6708.06,17,54,7,10,9,3,Affluent Conservative Savers
+C0326,27,Male,691809,87,18,2976.3,41,11,32,9,34,2,Young Impulse Trendsetters
+C0327,28,Male,378044,29,5,1354.66,12,25,3,9,10,4,Budget-Conscious Shoppers
+C0328,23,Male,686948,85,19,3114.65,49,10,36,13,30,2,Young Impulse Trendsetters
+C0329,59,Male,1881193,35,7,7398.11,18,19,7,11,15,3,Affluent Conservative Savers
+C0330,39,Male,2669130,88,24,6920.82,87,11,56,31,18,0,High-Value Champions
+C0331,50,Female,2272811,5,2,7204.76,6,30,2,4,14,3,Affluent Conservative Savers
+C0332,50,Female,490083,34,6,1142.61,13,32,5,8,5,4,Budget-Conscious Shoppers
+C0333,65,Male,2124481,26,6,7444.62,16,49,7,9,7,3,Affluent Conservative Savers
+C0334,32,Female,610620,78,21,2391.94,54,7,42,12,47,2,Young Impulse Trendsetters
+C0335,43,Male,2016816,79,29,8806.95,105,1,68,37,33,0,High-Value Champions
+C0336,28,Female,343196,27,9,1244.3,20,31,5,15,8,4,Budget-Conscious Shoppers
+C0337,53,Female,2383880,25,7,5975.52,17,58,9,8,12,3,Affluent Conservative Savers
+C0338,20,Female,725068,85,17,3852.61,37,2,30,7,35,2,Young Impulse Trendsetters
+C0339,39,Male,932961,41,3,2794.3,6,192,4,2,7,1,At-Risk Occasional Customers
+C0340,25,Male,475753,78,17,2865.21,47,12,34,13,39,2,Young Impulse Trendsetters
+C0341,20,Male,751438,80,18,3188.78,43,1,37,6,37,2,Young Impulse Trendsetters
+C0342,48,Female,349180,27,7,998.82,19,46,5,14,7,4,Budget-Conscious Shoppers
+C0343,35,Female,1858193,92,24,6909.26,92,21,57,35,28,0,High-Value Champions
+C0344,51,Male,2292356,72,25,8565.06,84,1,44,40,33,0,High-Value Champions
+C0345,55,Female,536209,30,6,944.35,10,40,3,7,7,4,Budget-Conscious Shoppers
+C0346,53,Male,480867,10,9,1057.16,24,47,6,18,10,4,Budget-Conscious Shoppers
+C0347,27,Female,675179,88,16,2754.04,44,2,38,6,43,2,Young Impulse Trendsetters
+C0348,51,Male,768671,43,3,3091.9,4,161,2,2,4,1,At-Risk Occasional Customers
+C0349,32,Male,2141778,93,34,6773.04,102,2,50,52,28,0,High-Value Champions
+C0350,56,Male,819967,47,4,2745.29,8,194,4,4,5,1,At-Risk Occasional Customers
+C0351,42,Male,2044193,88,24,9814.14,69,1,43,26,22,0,High-Value Champions
+C0352,68,Male,331042,16,9,1511.12,23,46,9,14,3,4,Budget-Conscious Shoppers
+C0353,56,Male,861611,37,4,2347.27,7,212,3,4,6,1,At-Risk Occasional Customers
+C0354,38,Female,1984546,90,27,9688.51,96,1,56,40,18,0,High-Value Champions
+C0355,68,Female,439305,15,8,1148.88,19,18,4,15,10,4,Budget-Conscious Shoppers
+C0356,31,Male,1883702,90,25,10501.53,72,9,39,33,23,0,High-Value Champions
+C0357,54,Female,390679,20,4,1077.11,7,50,3,4,8,4,Budget-Conscious Shoppers
+C0358,65,Female,523251,34,5,1219.25,11,46,3,8,10,4,Budget-Conscious Shoppers
+C0359,47,Male,475417,34,6,1697.46,13,50,5,8,7,4,Budget-Conscious Shoppers
+C0360,35,Male,1977407,86,25,6812.27,88,7,47,41,32,0,High-Value Champions
+C0361,26,Male,361469,37,8,1392.21,16,39,5,11,6,4,Budget-Conscious Shoppers
+C0362,24,Female,736427,90,15,3005.43,42,1,37,5,36,2,Young Impulse Trendsetters
+C0363,41,Male,1676585,88,36,7210.14,129,28,75,54,21,0,High-Value Champions
+C0364,44,Male,514281,25,4,1237.57,11,73,4,7,10,4,Budget-Conscious Shoppers
+C0365,40,Female,1625574,92,27,8094.29,101,6,55,46,30,0,High-Value Champions
+C0366,43,Female,2235912,85,24,7075.56,79,5,45,34,27,0,High-Value Champions
+C0367,60,Male,2411452,16,2,7572.51,6,86,2,4,11,3,Affluent Conservative Savers
+C0368,37,Male,1869482,88,38,8915.09,124,1,71,53,27,0,High-Value Champions
+C0369,35,Female,417199,30,6,1105.66,15,55,6,9,6,4,Budget-Conscious Shoppers
+C0370,45,Female,1233391,41,4,2606.63,8,168,3,5,4,1,At-Risk Occasional Customers
+C0371,42,Female,1724420,86,29,7610.74,86,2,43,43,26,0,High-Value Champions
+C0372,54,Male,2171883,28,7,8942.21,19,77,8,11,8,3,Affluent Conservative Savers
+C0373,40,Female,2026266,89,30,7942.16,98,1,58,40,26,0,High-Value Champions
+C0374,37,Male,1674834,85,25,8591.68,84,1,49,35,32,0,High-Value Champions
+C0375,42,Female,2284130,84,26,9797.69,92,21,50,42,23,0,High-Value Champions
+C0376,67,Female,2205484,15,5,6217.87,13,52,7,6,4,3,Affluent Conservative Savers
+C0377,26,Female,720145,76,22,3012.34,61,16,47,14,32,2,Young Impulse Trendsetters
+C0378,46,Female,2355173,81,25,8608.62,75,10,37,38,27,0,High-Value Champions
+C0379,50,Male,1157479,44,4,2633.71,7,213,4,3,3,1,At-Risk Occasional Customers
+C0380,40,Male,2166491,18,6,6465.98,12,35,5,7,12,3,Affluent Conservative Savers
+C0381,38,Female,525704,25,8,1225.13,17,53,7,10,8,4,Budget-Conscious Shoppers
+C0382,30,Female,1996056,93,26,9466.51,73,5,40,33,31,0,High-Value Champions
+C0383,51,Male,2281728,23,9,7075.47,19,74,8,11,18,3,Affluent Conservative Savers
+C0384,29,Female,456973,18,8,1240.69,15,45,6,9,8,4,Budget-Conscious Shoppers
+C0385,53,Female,409010,23,11,1592.19,27,25,5,22,9,4,Budget-Conscious Shoppers
+C0386,53,Female,960248,49,8,1770.3,15,218,7,8,5,1,At-Risk Occasional Customers
+C0387,23,Female,746740,82,20,2995.06,56,1,47,9,34,2,Young Impulse Trendsetters
+C0388,31,Male,2124356,83,29,9847.04,100,2,53,47,36,0,High-Value Champions
+C0389,31,Female,1011063,37,5,2272.84,8,163,5,3,3,1,At-Risk Occasional Customers
+C0390,72,Female,2101781,32,6,5452.73,14,37,6,8,16,3,Affluent Conservative Savers
+C0391,42,Female,2095719,83,31,8715.57,116,1,75,41,29,0,High-Value Champions
+C0392,34,Male,2086094,74,29,9128.48,86,24,53,33,32,0,High-Value Champions
+C0393,62,Male,1963273,20,7,5129.73,14,67,7,7,5,3,Affluent Conservative Savers
+C0394,40,Male,1894735,88,30,7862.59,113,1,71,42,33,0,High-Value Champions
+C0395,23,Female,733722,80,21,2985.84,46,16,37,9,36,2,Young Impulse Trendsetters
+C0396,35,Female,2231293,89,28,10747.65,87,14,42,45,36,0,High-Value Champions
+C0397,47,Male,420630,21,7,1253.02,14,32,4,10,5,4,Budget-Conscious Shoppers
+C0398,51,Male,551068,23,10,610.67,27,37,10,17,6,4,Budget-Conscious Shoppers
+C0399,51,Male,2399261,19,6,5725.43,13,24,5,8,12,3,Affluent Conservative Savers
+C0400,40,Male,890742,50,6,3036.2,13,113,7,6,2,1,At-Risk Occasional Customers
+C0401,36,Female,2069649,75,29,8044.02,82,17,43,39,28,0,High-Value Champions
+C0402,24,Female,661400,75,23,2944.39,51,14,43,8,37,2,Young Impulse Trendsetters
+C0403,28,Female,762148,78,20,3478.61,57,35,44,13,34,2,Young Impulse Trendsetters
+C0404,23,Female,879803,80,23,1867.47,59,8,51,8,32,2,Young Impulse Trendsetters
+C0405,25,Female,610816,99,20,2851.95,60,15,44,16,37,2,Young Impulse Trendsetters
+C0406,44,Male,2458953,25,5,9063.78,11,36,4,7,9,3,Affluent Conservative Savers
+C0407,53,Male,999075,49,1,2502.21,3,183,2,1,5,1,At-Risk Occasional Customers
+C0408,54,Female,461771,27,6,1550.36,12,27,3,9,9,4,Budget-Conscious Shoppers
+C0409,29,Female,2378049,91,24,8531.48,82,1,44,38,32,0,High-Value Champions
+C0410,22,Male,799409,88,17,2917.53,39,6,29,10,44,2,Young Impulse Trendsetters
+C0411,26,Male,704418,83,24,2434.44,73,18,55,18,36,2,Young Impulse Trendsetters
+C0412,34,Male,906720,48,3,1828.5,5,223,2,3,4,1,At-Risk Occasional Customers
+C0413,72,Female,2435290,20,8,6625.69,19,81,8,11,9,3,Affluent Conservative Savers
+C0414,42,Male,536260,29,5,796.16,12,15,5,7,7,4,Budget-Conscious Shoppers
+C0415,66,Female,2573248,11,2,7498.33,6,58,3,3,13,3,Affluent Conservative Savers
+C0416,61,Female,2309646,24,5,8465.94,10,27,5,5,12,3,Affluent Conservative Savers
+C0417,53,Female,2221864,19,7,6924.75,14,83,7,7,12,3,Affluent Conservative Savers
+C0418,54,Female,1993700,23,5,8227.97,14,55,7,7,8,3,Affluent Conservative Savers
+C0419,26,Female,824369,82,20,2329.06,51,3,41,10,33,2,Young Impulse Trendsetters
+C0420,42,Male,507784,13,2,1342.79,5,20,1,4,9,4,Budget-Conscious Shoppers
+C0421,33,Female,2238900,90,33,8966.93,114,1,60,54,32,0,High-Value Champions
+C0422,68,Male,2266885,19,4,7771.54,10,65,4,6,9,3,Affluent Conservative Savers
+C0423,26,Female,649865,84,20,3485.59,52,6,40,12,29,2,Young Impulse Trendsetters
+C0424,26,Female,750667,88,17,2927.83,44,1,35,9,39,2,Young Impulse Trendsetters
+C0425,52,Female,536975,27,9,1140.75,22,48,5,17,9,4,Budget-Conscious Shoppers
+C0426,50,Male,475632,16,7,998.76,13,37,4,9,6,4,Budget-Conscious Shoppers
+C0427,43,Male,2309387,83,30,6820.79,119,28,54,65,27,0,High-Value Champions
+C0428,25,Female,1808059,92,24,6761.72,93,4,52,41,28,0,High-Value Champions
+C0429,24,Female,465455,78,23,3410.86,63,12,48,15,48,2,Young Impulse Trendsetters
+C0430,36,Female,462770,31,7,1337.22,13,78,5,8,7,4,Budget-Conscious Shoppers
+C0431,51,Male,480543,28,5,1138.98,9,63,3,6,6,4,Budget-Conscious Shoppers
+C0432,28,Female,338077,16,7,989.9,13,55,4,9,9,4,Budget-Conscious Shoppers
+C0433,46,Male,347674,28,5,1692.72,10,44,3,7,9,4,Budget-Conscious Shoppers
+C0434,56,Male,497848,25,6,1236.27,15,35,4,11,7,4,Budget-Conscious Shoppers
+C0435,49,Male,536465,29,9,913.93,22,45,8,14,6,4,Budget-Conscious Shoppers
+C0436,40,Female,2641178,88,26,7867.82,88,28,44,44,25,0,High-Value Champions
+C0437,44,Female,1936023,94,32,6370.27,97,1,50,47,28,0,High-Value Champions
+C0438,43,Male,375151,7,7,1150.56,16,47,3,13,8,4,Budget-Conscious Shoppers
+C0439,68,Male,888598,39,1,1938.65,3,284,2,1,6,1,At-Risk Occasional Customers
+C0440,25,Male,673166,82,21,2671.74,57,1,41,16,41,2,Young Impulse Trendsetters
+C0441,41,Male,469776,16,10,1181.06,20,59,5,15,11,4,Budget-Conscious Shoppers
+C0442,24,Male,851264,77,17,2666.32,42,18,37,5,36,2,Young Impulse Trendsetters
+C0443,52,Male,1017211,48,2,2201.43,4,191,2,2,4,1,At-Risk Occasional Customers
+C0444,25,Male,554058,78,25,2317.57,61,35,52,9,45,2,Young Impulse Trendsetters
+C0445,19,Female,907451,76,17,2940.9,41,20,30,11,38,2,Young Impulse Trendsetters
+C0446,23,Female,843040,87,17,3195.18,40,4,32,8,33,2,Young Impulse Trendsetters
+C0447,21,Female,628239,88,19,2174.23,49,21,41,8,29,2,Young Impulse Trendsetters
+C0448,37,Female,1953124,87,31,8280.52,109,1,68,41,22,0,High-Value Champions
+C0449,62,Female,2184114,17,6,8683.83,16,38,6,10,9,3,Affluent Conservative Savers
+C0450,62,Female,2561338,13,3,7035.51,7,59,3,4,10,3,Affluent Conservative Savers
+C0451,22,Female,650344,81,16,2896.85,41,32,30,11,42,2,Young Impulse Trendsetters
+C0452,42,Female,1190014,60,5,2286.32,9,183,4,5,4,1,At-Risk Occasional Customers
+C0453,48,Male,517455,31,9,1121.23,22,41,9,13,6,4,Budget-Conscious Shoppers
+C0454,38,Male,1819734,93,20,7121.32,64,4,29,35,29,0,High-Value Champions
+C0455,51,Female,453726,20,9,875.22,25,26,10,15,10,4,Budget-Conscious Shoppers
+C0456,19,Male,838966,69,20,3741.21,44,24,35,9,37,2,Young Impulse Trendsetters
+C0457,51,Female,936744,62,5,3385.69,10,192,5,5,8,1,At-Risk Occasional Customers
+C0458,54,Female,2511817,21,5,9467.86,11,58,4,7,12,3,Affluent Conservative Savers
+C0459,56,Male,342746,35,6,906.53,14,15,4,10,6,4,Budget-Conscious Shoppers
+C0460,31,Female,467307,20,7,934.68,14,44,6,8,9,4,Budget-Conscious Shoppers
+C0461,38,Male,1960043,87,29,10311.04,88,3,55,33,22,0,High-Value Champions
+C0462,44,Male,1671665,89,22,10014.48,65,12,41,24,31,0,High-Value Champions
+C0463,22,Male,802167,96,20,2598.87,56,1,45,11,40,2,Young Impulse Trendsetters
+C0464,40,Male,794659,55,4,2712.6,8,148,4,4,4,1,At-Risk Occasional Customers
+C0465,48,Female,444990,23,8,1500.76,20,56,9,11,9,4,Budget-Conscious Shoppers
+C0466,39,Female,1706613,76,30,7801.93,100,1,46,54,32,0,High-Value Champions
+C0467,36,Male,1888810,87,26,6684.46,99,5,55,44,27,0,High-Value Champions
+C0468,55,Female,553525,17,11,1119.49,23,27,9,14,8,4,Budget-Conscious Shoppers
+C0469,27,Male,678680,89,21,2844.06,61,16,51,10,32,2,Young Impulse Trendsetters
+C0470,57,Female,516528,13,5,1231.57,10,33,3,7,6,4,Budget-Conscious Shoppers
+C0471,53,Male,403798,20,10,844.26,21,49,8,13,5,4,Budget-Conscious Shoppers
+C0472,41,Male,1686221,80,28,8101.21,82,21,53,29,30,0,High-Value Champions
+C0473,51,Female,971971,55,5,2453.11,9,110,4,5,4,1,At-Risk Occasional Customers
+C0474,39,Female,2106211,79,30,8317.7,115,28,63,52,23,0,High-Value Champions
+C0475,38,Female,456472,18,5,1624.52,9,32,2,7,11,4,Budget-Conscious Shoppers
+C0476,59,Male,1141765,39,1,1585.04,3,156,2,1,5,1,At-Risk Occasional Customers
+C0477,47,Male,1026394,43,7,2053.31,13,162,7,6,6,1,At-Risk Occasional Customers
+C0478,27,Female,1082159,52,5,2231.02,10,233,4,6,3,1,At-Risk Occasional Customers
+C0479,29,Male,709272,92,23,2958.13,56,32,48,8,35,2,Young Impulse Trendsetters
+C0480,25,Female,788919,87,14,2499.34,42,3,32,10,33,2,Young Impulse Trendsetters
+C0481,21,Female,682399,80,17,2027.58,50,7,38,12,29,2,Young Impulse Trendsetters
+C0482,36,Male,2103709,70,24,9826.19,77,11,43,34,29,0,High-Value Champions
+C0483,38,Female,2146972,80,33,8479.59,104,3,48,56,19,0,High-Value Champions
+C0484,43,Male,411493,13,11,1549.82,21,39,9,12,6,4,Budget-Conscious Shoppers
+C0485,24,Female,983132,79,19,2405.15,42,1,36,6,23,2,Young Impulse Trendsetters
+C0486,39,Female,2347075,85,27,8785.33,107,28,60,47,29,0,High-Value Champions
+C0487,30,Male,2489550,85,26,8825.03,84,28,52,32,22,0,High-Value Champions
+C0488,40,Female,551958,31,6,1290.35,16,51,4,12,5,4,Budget-Conscious Shoppers
+C0489,39,Female,1870669,86,23,6560.88,89,1,52,37,22,0,High-Value Champions
+C0490,28,Female,688846,82,16,2888.94,41,8,30,11,40,2,Young Impulse Trendsetters
+C0491,26,Female,1135524,41,3,2187.1,5,151,3,2,5,1,At-Risk Occasional Customers
+C0492,23,Male,790254,90,19,3146.85,50,8,37,13,38,2,Young Impulse Trendsetters
+C0493,58,Male,1944595,17,6,7132.61,13,68,6,7,13,3,Affluent Conservative Savers
+C0494,29,Female,1550000,89,31,9734.04,96,28,46,50,34,0,High-Value Champions
+C0495,64,Female,358030,27,4,1337.7,10,42,3,7,10,4,Budget-Conscious Shoppers
+C0496,48,Male,2671495,81,30,8798.07,103,12,53,50,29,0,High-Value Champions
+C0497,40,Female,483505,21,6,1161.8,12,67,3,9,8,4,Budget-Conscious Shoppers
+C0498,37,Male,267359,32,6,1239.91,15,53,6,9,7,4,Budget-Conscious Shoppers
+C0499,51,Female,1199696,40,5,2090.12,8,211,4,4,2,1,At-Risk Occasional Customers
+C0500,43,Male,990321,33,2,2391.74,3,154,1,2,7,1,At-Risk Occasional Customers
+C0501,62,Female,2386248,17,10,7394.2,28,70,14,14,5,3,Affluent Conservative Savers
+C0502,40,Male,2388932,87,27,9763.61,80,21,43,37,35,0,High-Value Champions
+C0503,47,Female,442480,9,10,1160.46,23,27,10,13,8,4,Budget-Conscious Shoppers
+C0504,51,Female,847422,47,4,3266.83,6,117,3,3,5,1,At-Risk Occasional Customers
+C0505,58,Male,2299151,30,4,8031.45,8,68,3,5,6,3,Affluent Conservative Savers
+C0506,26,Female,972321,42,3,2317.74,5,145,3,2,7,1,At-Risk Occasional Customers
+C0507,71,Female,1798316,31,4,8398.8,8,63,4,4,4,3,Affluent Conservative Savers
+C0508,54,Male,520738,32,6,1451.78,16,40,4,12,8,4,Budget-Conscious Shoppers
+C0509,48,Female,942314,53,2,2763.79,3,174,2,1,1,1,At-Risk Occasional Customers
+C0510,67,Male,1857985,29,5,6661.11,11,61,5,6,5,3,Affluent Conservative Savers
+C0511,46,Female,553876,33,5,1407.43,9,62,3,6,10,4,Budget-Conscious Shoppers
+C0512,26,Male,779227,85,22,2588.84,53,7,44,9,38,2,Young Impulse Trendsetters
+C0513,38,Male,220000,21,5,792.18,11,48,4,7,5,4,Budget-Conscious Shoppers
+C0514,33,Male,2421984,83,24,8107.58,86,16,48,38,30,0,High-Value Champions
+C0515,62,Male,351458,22,6,1105.74,15,39,3,12,5,4,Budget-Conscious Shoppers
+C0516,61,Male,2303737,19,7,4500.0,14,72,6,8,12,3,Affluent Conservative Savers
+C0517,45,Female,468096,13,7,848.86,12,23,5,7,10,4,Budget-Conscious Shoppers
+C0518,49,Female,2021663,85,19,7951.8,57,12,35,22,32,0,High-Value Champions
+C0519,41,Female,684791,48,3,2694.07,4,144,2,2,7,1,At-Risk Occasional Customers
+C0520,40,Male,1775687,91,32,7445.09,100,16,61,39,34,0,High-Value Champions
+C0521,52,Female,400585,21,7,1391.55,14,60,5,9,10,4,Budget-Conscious Shoppers
+C0522,62,Male,1920140,21,2,5424.41,6,29,2,4,5,3,Affluent Conservative Savers
+C0523,57,Female,817784,48,6,2816.55,13,252,7,6,5,1,At-Risk Occasional Customers
+C0524,41,Male,454985,30,9,1567.4,16,49,6,10,9,4,Budget-Conscious Shoppers
+C0525,43,Female,461355,22,7,1027.78,18,58,5,13,12,4,Budget-Conscious Shoppers
+C0526,25,Male,800183,81,18,3084.45,42,1,38,4,34,2,Young Impulse Trendsetters
+C0527,47,Male,1983264,17,4,7611.08,8,77,4,4,7,3,Affluent Conservative Savers
+C0528,43,Female,2051541,79,26,6515.84,100,1,64,36,26,0,High-Value Champions
+C0529,23,Male,650541,76,22,2181.15,53,1,47,6,36,2,Young Impulse Trendsetters
+C0530,42,Male,2130269,80,28,6576.6,87,12,48,39,21,0,High-Value Champions
+C0531,20,Female,726856,88,20,3142.01,59,3,43,16,35,2,Young Impulse Trendsetters
+C0532,32,Male,1652834,84,30,9897.14,100,2,54,46,23,0,High-Value Champions
+C0533,24,Female,576687,70,20,3182.11,54,34,43,11,30,2,Young Impulse Trendsetters
+C0534,48,Female,294815,15,10,1367.69,27,40,11,16,7,4,Budget-Conscious Shoppers
+C0535,42,Female,950334,45,3,2062.96,4,157,2,2,5,1,At-Risk Occasional Customers
+C0536,35,Male,369369,29,10,971.43,25,36,8,17,9,4,Budget-Conscious Shoppers
+C0537,32,Female,1578074,89,28,7967.81,85,21,49,36,26,0,High-Value Champions
+C0538,42,Female,1749732,78,24,9947.34,74,9,39,35,19,0,High-Value Champions
+C0539,63,Female,2202284,12,7,6935.57,18,66,9,9,5,3,Affluent Conservative Savers
+C0540,40,Female,448758,14,11,1160.02,25,59,8,17,9,4,Budget-Conscious Shoppers
+C0541,46,Male,2460547,90,25,8591.43,99,19,55,44,25,0,High-Value Champions
+C0542,29,Male,309790,20,10,1722.11,22,65,8,14,3,4,Budget-Conscious Shoppers
+C0543,59,Female,448449,28,7,1357.16,14,25,4,10,8,4,Budget-Conscious Shoppers
+C0544,22,Female,687090,81,23,2685.65,73,11,58,15,34,2,Young Impulse Trendsetters
+C0545,37,Female,1966178,91,32,9835.96,120,8,75,45,27,0,High-Value Champions
+C0546,31,Male,700231,32,3,2101.58,6,173,3,3,6,1,At-Risk Occasional Customers
+C0547,21,Male,791756,83,18,2496.08,49,2,42,7,44,2,Young Impulse Trendsetters
+C0548,38,Male,2625675,13,3,5622.57,8,56,4,4,12,3,Affluent Conservative Savers
+C0549,18,Male,895941,87,21,3130.9,63,22,49,14,38,2,Young Impulse Trendsetters
+C0550,30,Male,1655104,99,30,9247.97,109,28,49,60,30,0,High-Value Champions
+C0551,39,Female,2164489,73,29,8214.82,89,9,53,36,34,0,High-Value Champions
+C0552,25,Female,884638,81,18,2855.82,54,1,39,15,34,2,Young Impulse Trendsetters
+C0553,49,Male,1614273,24,5,8467.19,11,46,5,6,6,3,Affluent Conservative Savers
+C0554,34,Female,1616828,83,26,6823.28,90,1,49,41,31,0,High-Value Champions
+C0555,41,Female,731186,49,1,2279.79,3,206,1,2,4,1,At-Risk Occasional Customers
+C0556,34,Male,838650,48,4,2537.36,7,211,4,3,7,1,At-Risk Occasional Customers
+C0557,37,Male,432535,31,8,865.82,19,37,4,15,9,4,Budget-Conscious Shoppers
+C0558,43,Female,446230,28,8,1466.22,18,15,4,14,8,4,Budget-Conscious Shoppers
+C0559,44,Male,2378471,83,26,6596.04,86,23,45,41,35,0,High-Value Champions
+C0560,37,Female,513615,24,8,1338.51,18,46,5,13,6,4,Budget-Conscious Shoppers
+C0561,41,Male,2172094,91,25,8659.35,90,1,47,43,24,0,High-Value Champions
+C0562,41,Female,650000,57,3,2470.72,4,110,2,2,4,1,At-Risk Occasional Customers
+C0563,67,Female,1700079,26,6,6824.95,13,63,6,7,12,3,Affluent Conservative Savers
+C0564,72,Male,2313652,17,10,8214.83,28,57,12,16,7,3,Affluent Conservative Savers
+C0565,62,Female,474666,22,10,1790.97,20,57,7,13,7,4,Budget-Conscious Shoppers
+C0566,44,Male,499213,22,9,1080.65,21,17,7,14,8,4,Budget-Conscious Shoppers
+C0567,50,Female,2095145,22,7,7198.12,20,38,11,9,11,3,Affluent Conservative Savers
+C0568,49,Female,395375,26,8,1538.5,15,55,5,10,6,4,Budget-Conscious Shoppers
+C0569,37,Female,492031,27,10,905.49,23,69,8,15,9,4,Budget-Conscious Shoppers
+C0570,37,Male,1036017,40,6,2564.59,10,226,5,5,2,1,At-Risk Occasional Customers
+C0571,49,Female,2424762,78,28,8597.51,101,1,47,54,36,0,High-Value Champions
+C0572,38,Female,2053738,78,21,7526.32,70,2,37,33,35,0,High-Value Champions
+C0573,59,Male,2169406,26,8,6999.72,17,74,8,9,15,3,Affluent Conservative Savers
+C0574,35,Male,2101355,91,25,7689.95,76,4,42,34,30,0,High-Value Champions
+C0575,27,Male,391082,26,7,954.42,16,32,3,13,8,4,Budget-Conscious Shoppers
+C0576,51,Male,1029555,47,3,2807.57,5,134,2,3,5,1,At-Risk Occasional Customers
+C0577,32,Female,1976746,89,28,6517.35,95,5,45,50,24,0,High-Value Champions
+C0578,22,Female,475981,90,23,2353.92,57,1,48,9,43,2,Young Impulse Trendsetters
+C0579,42,Male,340388,22,3,1244.62,6,66,1,5,9,4,Budget-Conscious Shoppers
+C0580,32,Female,694627,85,22,2448.55,61,1,45,16,39,2,Young Impulse Trendsetters
+C0581,29,Male,220000,20,5,1321.11,10,51,3,7,8,4,Budget-Conscious Shoppers
+C0582,33,Male,1854205,91,27,9830.32,91,8,50,41,30,0,High-Value Champions
+C0583,49,Female,2452835,27,6,5506.81,12,46,5,7,11,3,Affluent Conservative Savers
+C0584,62,Female,2398695,17,8,8018.46,23,35,9,14,15,3,Affluent Conservative Savers
+C0585,56,Female,2698487,28,2,7389.33,6,70,3,3,9,3,Affluent Conservative Savers
+C0586,33,Female,318840,11,7,1169.07,13,53,3,10,7,4,Budget-Conscious Shoppers
+C0587,23,Female,544066,73,23,2806.29,69,13,54,15,30,2,Young Impulse Trendsetters
+C0588,22,Male,813852,72,20,2536.06,63,1,53,10,36,2,Young Impulse Trendsetters
+C0589,39,Female,1980721,93,31,9041.96,100,3,62,38,28,0,High-Value Champions
+C0590,40,Female,2254665,91,30,9417.19,116,3,75,41,25,0,High-Value Champions
+C0591,50,Female,482671,22,6,1555.59,14,36,5,9,8,4,Budget-Conscious Shoppers
+C0592,54,Female,2282407,18,7,8276.66,17,81,7,10,13,3,Affluent Conservative Savers
+C0593,62,Male,2056412,15,10,9454.21,26,80,9,17,6,3,Affluent Conservative Savers
+C0594,64,Male,2575354,24,6,9868.31,16,18,7,9,12,3,Affluent Conservative Savers
+C0595,32,Male,739466,57,3,2372.51,4,182,2,2,4,1,At-Risk Occasional Customers
+C0596,46,Male,1910061,91,24,9835.1,88,14,51,37,27,0,High-Value Champions
+C0597,62,Male,391886,34,6,1583.09,12,55,5,7,8,4,Budget-Conscious Shoppers
+C0598,25,Female,689566,75,22,3018.78,57,15,50,7,36,2,Young Impulse Trendsetters
+C0599,21,Male,612338,95,15,2682.92,34,35,29,5,34,2,Young Impulse Trendsetters
+C0600,48,Female,1651442,30,4,8679.71,8,48,4,4,12,3,Affluent Conservative Savers
+C0601,35,Female,2105740,87,31,8692.32,112,10,55,57,21,0,High-Value Champions
+C0602,45,Female,2117485,84,30,8462.94,93,3,48,45,23,0,High-Value Champions
+C0603,45,Male,455749,23,6,1266.67,16,31,6,10,7,4,Budget-Conscious Shoppers
+C0604,45,Male,401567,17,9,1458.81,20,28,5,15,4,4,Budget-Conscious Shoppers
+C0605,20,Male,758491,81,14,2272.04,41,4,34,7,40,2,Young Impulse Trendsetters
+C0606,49,Female,780704,49,3,2323.15,5,144,3,2,4,1,At-Risk Occasional Customers
+C0607,43,Male,2379678,98,23,9843.98,83,2,46,37,36,0,High-Value Champions
+C0608,48,Female,1632468,88,27,9388.02,86,14,41,45,21,0,High-Value Champions
+C0609,22,Female,909437,87,16,2655.95,40,4,36,4,23,2,Young Impulse Trendsetters
+C0610,21,Female,797773,92,21,2656.23,63,8,51,12,41,2,Young Impulse Trendsetters
+C0611,38,Female,1961962,82,19,9339.95,67,4,41,26,34,0,High-Value Champions
+C0612,32,Male,597502,22,8,820.84,17,31,6,11,8,4,Budget-Conscious Shoppers
+C0613,67,Male,2015061,22,6,6366.93,13,52,6,7,7,3,Affluent Conservative Savers
+C0614,38,Female,2250089,15,5,9066.19,10,61,5,5,7,3,Affluent Conservative Savers
+C0615,50,Male,2472583,21,9,8345.82,25,37,11,14,14,3,Affluent Conservative Savers
+C0616,63,Male,1986571,19,5,7193.35,13,61,6,7,10,3,Affluent Conservative Savers
+C0617,44,Female,1042710,50,1,1711.61,3,166,1,2,9,1,At-Risk Occasional Customers
+C0618,18,Male,1000391,84,21,2513.57,47,2,34,13,38,2,Young Impulse Trendsetters
+C0619,50,Male,699327,46,4,2201.75,8,110,5,3,3,1,At-Risk Occasional Customers
+C0620,50,Male,2077761,87,32,9629.24,105,1,48,57,28,0,High-Value Champions
+C0621,30,Female,901413,49,6,2199.41,9,169,4,5,3,1,At-Risk Occasional Customers
+C0622,39,Female,1756168,90,24,9916.78,73,8,44,29,25,0,High-Value Champions
+C0623,46,Female,801820,53,4,1627.93,6,159,2,4,3,1,At-Risk Occasional Customers
+C0624,43,Female,2266944,96,23,7718.16,78,16,42,36,28,0,High-Value Champions
+C0625,28,Female,2094312,77,32,9929.34,124,21,75,49,23,0,High-Value Champions
+C0626,25,Female,505569,79,14,2755.36,34,3,27,7,40,2,Young Impulse Trendsetters
+C0627,25,Male,2028611,85,27,7288.62,86,22,47,39,30,0,High-Value Champions
+C0628,37,Male,952143,55,7,2728.16,14,187,7,7,4,1,At-Risk Occasional Customers
+C0629,48,Male,959860,62,5,1846.95,9,217,5,4,4,1,At-Risk Occasional Customers
+C0630,25,Female,788171,79,18,2424.38,53,9,39,14,29,2,Young Impulse Trendsetters
+C0631,50,Male,927010,36,4,2142.7,6,110,3,3,3,1,At-Risk Occasional Customers
+C0632,26,Female,749217,83,21,2867.89,52,2,40,12,40,2,Young Impulse Trendsetters
+C0633,50,Male,364258,28,8,1065.29,17,38,5,12,7,4,Budget-Conscious Shoppers
+C0634,56,Female,2232314,22,5,7573.51,13,59,5,8,5,3,Affluent Conservative Savers
+C0635,41,Male,831944,40,2,2507.94,3,127,1,2,5,1,At-Risk Occasional Customers
+C0636,30,Female,423273,16,9,1071.7,16,22,3,13,5,4,Budget-Conscious Shoppers
+C0637,25,Male,2094749,83,21,7651.0,63,1,32,31,36,0,High-Value Champions
+C0638,50,Male,929068,45,3,2265.16,4,220,2,2,7,1,At-Risk Occasional Customers
+C0639,49,Female,410921,25,10,942.01,25,54,5,20,9,4,Budget-Conscious Shoppers
+C0640,33,Female,895048,49,4,1956.0,7,199,3,4,7,1,At-Risk Occasional Customers
+C0641,38,Female,387753,15,11,1232.91,29,36,9,20,7,4,Budget-Conscious Shoppers
+C0642,43,Female,411739,12,7,1615.37,13,53,3,10,8,4,Budget-Conscious Shoppers
+C0643,29,Male,1712208,82,33,6259.22,128,1,70,58,35,0,High-Value Champions
+C0644,50,Female,727665,57,3,2416.9,4,138,2,2,6,1,At-Risk Occasional Customers
+C0645,62,Male,280189,26,8,1239.93,15,39,5,10,3,4,Budget-Conscious Shoppers
+C0646,21,Female,713281,88,19,2174.68,51,1,46,5,44,2,Young Impulse Trendsetters
+C0647,48,Female,790147,34,3,3122.56,6,152,3,3,1,1,At-Risk Occasional Customers
+C0648,55,Male,892994,58,1,1975.14,3,212,2,1,5,1,At-Risk Occasional Customers
+C0649,57,Male,2351263,15,5,6322.18,12,65,4,8,9,3,Affluent Conservative Savers
+C0650,57,Male,1037678,45,4,2876.98,6,171,3,3,7,1,At-Risk Occasional Customers
+C0651,37,Female,1858953,85,32,8060.98,104,5,55,49,24,0,High-Value Champions
+C0652,45,Male,874452,61,1,2705.11,3,206,2,1,6,1,At-Risk Occasional Customers
+C0653,46,Male,1345500,49,2,2917.23,4,228,2,2,4,1,At-Risk Occasional Customers
+C0654,26,Male,732297,71,26,2444.55,74,8,63,11,37,2,Young Impulse Trendsetters
+C0655,37,Female,966084,44,3,2859.88,6,123,3,3,7,1,At-Risk Occasional Customers
+C0656,61,Female,2146867,26,4,7776.77,11,59,4,7,8,3,Affluent Conservative Savers
+C0657,28,Female,553621,81,16,3779.67,36,3,32,4,31,2,Young Impulse Trendsetters
+C0658,64,Female,1248814,35,2,2553.4,3,209,2,1,4,1,At-Risk Occasional Customers
+C0659,34,Female,1602031,88,22,8708.83,72,10,44,28,30,0,High-Value Champions
+C0660,42,Female,984759,57,2,2865.13,3,159,1,2,3,1,At-Risk Occasional Customers
+C0661,43,Female,2569600,94,35,9320.38,125,1,65,60,30,0,High-Value Champions
+C0662,45,Female,2175211,32,2,7614.94,6,66,2,4,11,3,Affluent Conservative Savers
+C0663,45,Female,880421,39,3,2217.25,5,288,2,3,6,1,At-Risk Occasional Customers
+C0664,72,Female,2495719,24,6,6160.01,15,54,6,9,10,3,Affluent Conservative Savers
+C0665,40,Female,2078807,82,28,9700.15,102,13,55,47,27,0,High-Value Champions
+C0666,42,Female,340452,29,3,1180.66,6,45,3,3,12,4,Budget-Conscious Shoppers
+C0667,46,Female,2410408,10,6,6433.16,15,59,6,9,12,3,Affluent Conservative Savers
+C0668,44,Female,2368996,93,29,7366.21,85,11,46,39,27,0,High-Value Champions
+C0669,39,Male,372242,7,7,1428.37,18,46,7,11,7,4,Budget-Conscious Shoppers
+C0670,53,Female,398987,21,9,1315.62,21,52,7,14,6,4,Budget-Conscious Shoppers
+C0671,45,Female,2186599,22,4,7522.76,11,92,6,5,7,3,Affluent Conservative Savers
+C0672,24,Male,565236,83,18,3402.11,51,4,38,13,44,2,Young Impulse Trendsetters
+C0673,57,Male,2553417,20,5,7876.81,14,22,7,7,12,3,Affluent Conservative Savers
+C0674,49,Male,2329424,25,8,6051.96,16,41,7,9,4,3,Affluent Conservative Savers
+C0675,46,Female,2133157,73,39,7541.75,110,3,65,45,30,0,High-Value Champions
+C0676,51,Male,2261593,80,27,11111.76,99,5,47,52,33,0,High-Value Champions
+C0677,48,Female,2222548,89,33,7122.15,97,9,59,38,25,0,High-Value Champions
+C0678,41,Male,253952,23,7,1118.33,14,31,6,8,7,4,Budget-Conscious Shoppers
+C0679,55,Male,684776,45,4,2250.13,6,128,3,3,4,1,At-Risk Occasional Customers
+C0680,36,Female,2024572,76,28,8792.47,107,1,65,42,36,0,High-Value Champions
+C0681,25,Female,623971,74,18,2419.2,55,26,42,13,43,2,Young Impulse Trendsetters
+C0682,67,Male,962839,45,5,2752.42,10,192,5,5,5,1,At-Risk Occasional Customers
+C0683,54,Male,2424975,33,4,5990.97,10,38,4,6,5,3,Affluent Conservative Savers
+C0684,40,Female,1978238,91,28,7912.14,103,2,48,55,20,0,High-Value Champions
+C0685,50,Female,2358568,21,7,8884.05,18,85,8,10,10,3,Affluent Conservative Savers
+C0686,42,Male,1914706,83,28,9115.02,81,1,52,29,32,0,High-Value Champions
+C0687,39,Female,475895,11,8,500.0,22,53,8,14,10,4,Budget-Conscious Shoppers
+C0688,22,Male,813984,89,20,3594.72,55,16,49,6,54,2,Young Impulse Trendsetters
+C0689,36,Female,377135,12,5,1508.95,9,53,3,6,7,4,Budget-Conscious Shoppers
+C0690,35,Male,362566,22,10,1248.53,25,52,6,19,6,4,Budget-Conscious Shoppers
+C0691,61,Female,2324958,20,5,8616.29,11,49,5,6,12,3,Affluent Conservative Savers
+C0692,27,Female,743133,74,17,1983.01,38,1,30,8,41,2,Young Impulse Trendsetters
+C0693,23,Female,933647,82,14,3632.97,43,4,31,12,36,2,Young Impulse Trendsetters
+C0694,38,Female,2634945,23,5,6718.05,12,45,5,7,4,3,Affluent Conservative Savers
+C0695,68,Female,893536,50,5,2977.85,8,204,4,4,4,1,At-Risk Occasional Customers
+C0696,39,Male,439152,26,8,849.9,19,48,7,12,8,4,Budget-Conscious Shoppers
+C0697,31,Female,725060,91,14,3002.99,38,1,33,5,35,2,Young Impulse Trendsetters
+C0698,43,Male,391229,26,8,1873.26,15,23,5,10,9,4,Budget-Conscious Shoppers
+C0699,37,Male,515351,28,11,1139.92,22,19,8,14,7,4,Budget-Conscious Shoppers
+C0700,37,Female,2094323,81,33,7420.99,123,10,60,63,21,0,High-Value Champions
+C0701,60,Female,1963483,14,4,8856.93,9,39,4,5,14,3,Affluent Conservative Savers
+C0702,24,Female,722792,88,18,2915.63,46,13,37,9,38,2,Young Impulse Trendsetters
+C0703,53,Male,925988,46,4,2343.79,8,209,4,4,4,1,At-Risk Occasional Customers
+C0704,24,Male,730760,81,20,3034.23,59,8,45,14,40,2,Young Impulse Trendsetters
+C0705,44,Female,1104898,51,6,2457.8,10,156,5,5,5,1,At-Risk Occasional Customers
+C0706,22,Female,811477,88,20,3352.57,52,14,44,8,37,2,Young Impulse Trendsetters
+C0707,36,Male,1837647,72,26,7537.7,97,22,62,35,16,0,High-Value Champions
+C0708,36,Male,2144032,80,27,6343.83,102,1,56,46,38,0,High-Value Champions
+C0709,39,Female,2019261,26,6,6441.24,15,45,7,8,6,3,Affluent Conservative Savers
+C0710,52,Female,993924,32,1,2113.4,3,137,2,1,1,1,At-Risk Occasional Customers
+C0711,66,Female,1849713,16,7,6593.17,15,19,8,7,7,3,Affluent Conservative Savers
+C0712,21,Female,743140,89,23,2151.26,59,1,50,9,42,2,Young Impulse Trendsetters
+C0713,47,Female,471719,34,6,1105.61,10,49,4,6,5,4,Budget-Conscious Shoppers
+C0714,25,Female,798746,87,21,2615.44,59,21,49,10,39,2,Young Impulse Trendsetters
+C0715,42,Male,298842,26,11,1204.6,30,50,13,17,7,4,Budget-Conscious Shoppers
+C0716,33,Male,2310635,89,26,8873.47,89,1,44,45,24,0,High-Value Champions
+C0717,38,Female,2281380,92,30,9293.61,99,17,47,52,31,0,High-Value Champions
+C0718,57,Male,1195844,55,2,3394.44,3,214,2,1,8,1,At-Risk Occasional Customers
+C0719,21,Female,631362,82,22,2624.08,58,35,50,8,39,2,Young Impulse Trendsetters
+C0720,31,Male,2193982,80,29,7742.47,115,1,68,47,27,0,High-Value Champions
+C0721,45,Female,965244,51,1,2981.99,3,200,2,1,2,1,At-Risk Occasional Customers
+C0722,39,Male,2054523,87,31,8919.69,91,23,42,49,31,0,High-Value Champions
+C0723,24,Female,557359,92,18,2472.71,56,10,44,12,42,2,Young Impulse Trendsetters
+C0724,50,Female,443726,27,8,1277.83,19,56,7,12,8,4,Budget-Conscious Shoppers
+C0725,47,Male,491628,19,8,1405.09,22,62,5,17,7,4,Budget-Conscious Shoppers
+C0726,57,Female,384142,37,6,1484.6,15,45,3,12,7,4,Budget-Conscious Shoppers
+C0727,44,Female,1775678,81,29,9605.66,108,8,65,43,26,0,High-Value Champions
+C0728,43,Male,2093099,90,30,7166.7,116,11,65,51,32,0,High-Value Champions
+C0729,28,Male,1856591,76,33,10580.53,97,6,44,53,25,0,High-Value Champions
+C0730,29,Female,357693,32,7,1463.71,13,42,6,7,6,4,Budget-Conscious Shoppers
+C0731,36,Male,461801,27,8,802.88,20,56,8,12,8,4,Budget-Conscious Shoppers
+C0732,52,Female,414873,27,3,1159.47,8,67,3,5,8,4,Budget-Conscious Shoppers
+C0733,39,Male,1178013,34,8,2590.03,16,185,7,9,4,1,At-Risk Occasional Customers
+C0734,56,Male,1981471,26,5,6474.41,14,50,5,9,5,3,Affluent Conservative Savers
+C0735,37,Male,1061197,57,7,2281.69,13,110,6,7,3,1,At-Risk Occasional Customers
+C0736,61,Female,2450250,28,5,7156.98,10,68,4,6,10,3,Affluent Conservative Savers
+C0737,38,Female,986310,41,5,2746.11,10,202,6,4,4,1,At-Risk Occasional Customers
+C0738,40,Male,1729833,86,24,10037.16,83,1,48,35,27,0,High-Value Champions
+C0739,25,Female,729018,89,15,2914.17,45,4,34,11,32,2,Young Impulse Trendsetters
+C0740,51,Female,375766,16,6,1258.85,12,25,4,8,9,4,Budget-Conscious Shoppers
+C0741,50,Female,2288138,33,6,8664.69,12,62,5,7,7,3,Affluent Conservative Savers
+C0742,69,Male,2170408,19,7,8705.11,19,24,8,11,7,3,Affluent Conservative Savers
+C0743,57,Male,2441303,11,4,7116.19,8,50,4,4,6,3,Affluent Conservative Savers
+C0744,45,Female,1089202,49,1,2408.21,3,153,2,1,6,1,At-Risk Occasional Customers
+C0745,45,Female,1841888,84,24,9301.55,76,15,48,28,25,0,High-Value Champions
+C0746,21,Female,951582,99,22,3071.33,63,1,54,9,42,2,Young Impulse Trendsetters
+C0747,60,Female,976092,43,1,2683.38,3,161,2,1,1,1,At-Risk Occasional Customers
+C0748,53,Male,2184932,28,7,6221.56,14,72,6,8,9,3,Affluent Conservative Savers
+C0749,62,Female,2095121,34,4,6024.97,9,60,4,5,3,3,Affluent Conservative Savers
+C0750,54,Female,831497,53,3,2935.71,5,130,3,2,3,1,At-Risk Occasional Customers
+C0751,32,Female,691600,86,22,3660.73,67,7,53,14,24,2,Young Impulse Trendsetters
+C0752,46,Male,751060,53,5,1944.28,10,214,6,4,4,1,At-Risk Occasional Customers
+C0753,63,Male,1956433,29,4,8819.78,10,77,4,6,7,3,Affluent Conservative Savers
+C0754,25,Female,423754,33,9,1074.66,18,23,4,14,8,4,Budget-Conscious Shoppers
+C0755,26,Male,736664,48,5,2774.98,9,203,5,4,7,1,At-Risk Occasional Customers
+C0756,23,Female,852269,91,19,2647.39,48,8,40,8,45,2,Young Impulse Trendsetters
+C0757,33,Female,650000,32,5,869.39,13,34,6,7,10,4,Budget-Conscious Shoppers
+C0758,67,Male,2025044,25,7,8106.08,16,22,7,9,7,3,Affluent Conservative Savers
+C0759,22,Female,505629,32,7,1102.94,19,45,8,11,2,4,Budget-Conscious Shoppers
+C0760,23,Male,788927,97,21,2316.27,54,1,45,9,38,2,Young Impulse Trendsetters
+C0761,31,Male,1698550,76,36,8384.07,138,23,74,64,36,0,High-Value Champions
+C0762,47,Female,2551728,19,4,4520.05,9,47,4,5,9,3,Affluent Conservative Savers
+C0763,36,Female,587163,24,9,1200.95,22,20,5,17,9,4,Budget-Conscious Shoppers
+C0764,37,Female,707424,50,2,2069.63,3,177,2,1,1,1,At-Risk Occasional Customers
+C0765,26,Male,528275,94,16,3282.49,36,23,29,7,44,2,Young Impulse Trendsetters
+C0766,45,Female,2143703,16,8,8421.83,17,65,9,8,8,3,Affluent Conservative Savers
+C0767,31,Male,423617,24,6,856.88,13,36,5,8,10,4,Budget-Conscious Shoppers
+C0768,47,Female,987090,55,1,1984.08,3,204,1,2,6,1,At-Risk Occasional Customers
+C0769,57,Female,931911,46,5,2146.03,8,129,3,5,3,1,At-Risk Occasional Customers
+C0770,38,Female,243051,34,5,1133.34,9,51,2,7,8,4,Budget-Conscious Shoppers
+C0771,50,Female,2258220,10,3,9093.12,8,34,4,4,7,3,Affluent Conservative Savers
+C0772,44,Male,2214752,26,7,6389.98,15,65,7,8,9,3,Affluent Conservative Savers
+C0773,38,Male,425762,22,6,1219.37,11,18,5,6,9,4,Budget-Conscious Shoppers
+C0774,27,Female,554281,83,18,2483.8,44,2,37,7,26,2,Young Impulse Trendsetters
+C0775,35,Female,395175,18,5,1495.83,12,70,3,9,7,4,Budget-Conscious Shoppers
+C0776,40,Male,994271,42,2,2601.57,3,192,1,2,4,1,At-Risk Occasional Customers
+C0777,44,Male,1721530,29,4,6731.39,10,63,4,6,3,3,Affluent Conservative Savers
+C0778,45,Female,249701,9,6,968.05,16,41,5,11,11,4,Budget-Conscious Shoppers
+C0779,33,Male,346599,22,8,1616.08,19,55,6,13,8,4,Budget-Conscious Shoppers
+C0780,45,Male,2865730,19,6,8185.98,12,59,5,7,8,3,Affluent Conservative Savers
+C0781,22,Male,535808,73,20,2941.14,48,1,41,7,41,2,Young Impulse Trendsetters
+C0782,21,Female,755342,74,18,3241.69,57,11,45,12,39,2,Young Impulse Trendsetters
+C0783,46,Female,464260,18,6,946.67,14,55,4,10,10,4,Budget-Conscious Shoppers
+C0784,59,Female,568616,41,5,850.77,12,50,2,10,10,4,Budget-Conscious Shoppers
+C0785,65,Female,420054,29,9,998.31,18,19,8,10,9,4,Budget-Conscious Shoppers
+C0786,48,Male,347835,31,5,1587.0,9,33,4,5,6,4,Budget-Conscious Shoppers
+C0787,50,Male,809229,43,3,2872.85,5,164,3,2,2,1,At-Risk Occasional Customers
+C0788,50,Male,2187304,9,6,7047.18,16,39,8,8,17,3,Affluent Conservative Savers
+C0789,27,Male,690020,85,15,2704.37,38,9,28,10,45,2,Young Impulse Trendsetters
+C0790,33,Male,400951,24,6,1493.19,14,15,3,11,9,4,Budget-Conscious Shoppers
+C0791,19,Male,797164,68,20,2550.67,54,9,40,14,40,2,Young Impulse Trendsetters
+C0792,24,Male,550112,89,22,2305.61,57,2,42,15,27,2,Young Impulse Trendsetters
+C0793,62,Female,1041660,41,2,2703.06,3,110,2,1,2,1,At-Risk Occasional Customers
+C0794,60,Male,861839,49,5,2510.67,10,174,5,5,5,1,At-Risk Occasional Customers
+C0795,64,Male,1012564,40,5,2074.43,8,175,4,4,5,1,At-Risk Occasional Customers
+C0796,23,Female,612595,70,19,2393.79,49,3,43,6,40,2,Young Impulse Trendsetters
+C0797,43,Female,932965,47,3,3005.18,4,192,2,2,4,1,At-Risk Occasional Customers
+C0798,45,Female,1600000,20,9,7534.03,23,52,10,13,11,3,Affluent Conservative Savers
+C0799,27,Female,586085,75,23,2501.0,54,27,43,11,31,2,Young Impulse Trendsetters
+C0800,51,Female,1151890,55,3,2710.62,5,110,2,3,5,1,At-Risk Occasional Customers
+C0801,22,Male,743518,79,14,2697.39,35,5,31,4,46,2,Young Impulse Trendsetters
+C0802,44,Female,1178677,44,7,2801.33,11,155,6,5,4,1,At-Risk Occasional Customers
+C0803,20,Female,712534,83,25,3000.79,79,2,68,11,38,2,Young Impulse Trendsetters
+C0804,40,Male,2403327,16,5,7127.33,12,63,5,7,4,3,Affluent Conservative Savers
+C0805,40,Female,2057141,77,30,7353.27,110,1,56,54,34,0,High-Value Champions
+C0806,22,Male,435915,20,9,1459.26,22,56,5,17,8,4,Budget-Conscious Shoppers
+C0807,61,Female,2507291,11,4,6184.8,10,65,5,5,6,3,Affluent Conservative Savers
+C0808,52,Male,1954087,75,33,10349.2,92,9,48,44,24,0,High-Value Champions
+C0809,22,Female,593115,78,20,3399.43,62,9,47,15,26,2,Young Impulse Trendsetters
+C0810,44,Female,2200802,81,27,6200.98,104,4,49,55,36,0,High-Value Champions
+C0811,18,Female,717576,86,22,2700.26,67,1,59,8,39,2,Young Impulse Trendsetters
+C0812,41,Male,2325672,84,28,8917.43,81,6,44,37,37,0,High-Value Champions
+C0813,19,Female,867032,84,18,2901.37,54,1,42,12,47,2,Young Impulse Trendsetters
+C0814,55,Female,1008227,53,3,2247.78,6,228,3,3,7,1,At-Risk Occasional Customers
+C0815,26,Female,706231,48,3,3075.88,5,216,2,3,7,1,At-Risk Occasional Customers
+C0816,59,Female,733411,51,4,1976.37,7,180,4,3,8,1,At-Risk Occasional Customers
+C0817,48,Female,970314,59,3,2001.33,5,189,2,3,11,1,At-Risk Occasional Customers
+C0818,63,Female,1829770,23,2,5770.74,6,95,3,3,9,3,Affluent Conservative Savers
+C0819,44,Male,1963769,91,29,8946.18,110,11,64,46,31,0,High-Value Champions
+C0820,21,Female,595278,87,14,1911.4,41,26,35,6,33,2,Young Impulse Trendsetters
+C0821,46,Female,466753,27,13,998.72,27,59,11,16,10,4,Budget-Conscious Shoppers
+C0822,53,Female,1816629,23,10,8029.34,21,64,9,12,8,3,Affluent Conservative Savers
+C0823,23,Female,477863,90,17,2983.58,46,20,36,10,40,2,Young Impulse Trendsetters
+C0824,56,Male,2023154,24,5,7143.59,11,63,5,6,11,3,Affluent Conservative Savers
+C0825,21,Male,833993,81,14,3219.37,44,3,37,7,44,2,Young Impulse Trendsetters
+C0826,21,Female,718804,76,20,1931.12,54,10,39,15,33,2,Young Impulse Trendsetters
+C0827,38,Female,876062,59,1,3083.25,3,200,1,2,4,1,At-Risk Occasional Customers
+C0828,32,Female,2107419,84,37,8821.05,128,9,63,65,32,0,High-Value Champions
+C0829,33,Male,388517,14,8,1222.78,19,72,6,13,8,4,Budget-Conscious Shoppers
+C0830,50,Female,2381860,26,2,8093.2,6,19,3,3,9,3,Affluent Conservative Savers
+C0831,63,Female,488641,18,3,1236.27,7,44,3,4,8,4,Budget-Conscious Shoppers
+C0832,64,Male,1697137,30,6,6781.57,13,55,6,7,7,3,Affluent Conservative Savers
+C0833,33,Male,1096680,41,2,2101.03,4,176,2,2,8,1,At-Risk Occasional Customers
+C0834,41,Female,1932007,91,30,8760.24,102,1,62,40,34,0,High-Value Champions
+C0835,41,Male,1579679,87,31,7390.01,96,17,50,46,20,0,High-Value Champions
+C0836,56,Female,2323695,8,6,8310.81,16,66,8,8,8,3,Affluent Conservative Savers
+C0837,26,Male,720083,83,18,2275.84,53,1,40,13,38,2,Young Impulse Trendsetters
+C0838,47,Male,1162226,41,3,2196.29,5,194,3,2,3,1,At-Risk Occasional Customers
+C0839,24,Female,527888,91,26,2928.43,80,35,61,19,38,2,Young Impulse Trendsetters
+C0840,69,Male,2266755,10,5,6536.86,11,66,6,5,7,3,Affluent Conservative Savers
+C0841,21,Male,727487,88,23,3017.5,72,15,64,8,44,2,Young Impulse Trendsetters
+C0842,57,Male,2411043,23,11,6269.28,32,53,13,19,12,3,Affluent Conservative Savers
+C0843,58,Female,1895935,17,11,6258.21,28,54,12,16,8,3,Affluent Conservative Savers
+C0844,39,Male,2116965,87,29,8294.99,105,1,59,46,25,0,High-Value Champions
+C0845,55,Female,1998342,22,3,6517.95,8,55,4,4,9,3,Affluent Conservative Savers
+C0846,52,Male,2131218,24,2,4776.6,6,56,3,3,14,3,Affluent Conservative Savers
+C0847,22,Female,804788,86,22,2686.61,54,16,43,11,30,2,Young Impulse Trendsetters
+C0848,32,Male,432757,20,6,1561.47,15,45,5,10,8,4,Budget-Conscious Shoppers
+C0849,22,Male,785178,81,22,2856.89,61,12,44,17,30,2,Young Impulse Trendsetters
+C0850,50,Female,2067782,91,29,8483.81,90,6,58,32,31,0,High-Value Champions
+C0851,45,Female,2201110,89,25,6533.56,93,4,59,34,21,0,High-Value Champions
+C0852,55,Male,2178396,25,4,10097.61,11,55,5,6,7,3,Affluent Conservative Savers
+C0853,47,Male,1899582,26,9,9492.81,22,47,10,12,18,3,Affluent Conservative Savers
+C0854,49,Male,1989988,75,25,6480.78,88,12,52,36,33,0,High-Value Champions
+C0855,43,Female,2440815,79,25,7854.78,85,1,52,33,27,0,High-Value Champions
+C0856,52,Male,2147195,88,34,7040.49,105,4,63,42,37,0,High-Value Champions
+C0857,54,Female,801943,45,8,1663.94,14,169,6,8,6,1,At-Risk Occasional Customers
+C0858,32,Female,370691,26,6,1298.32,11,66,4,7,5,4,Budget-Conscious Shoppers
+C0859,22,Male,601217,82,18,2864.28,48,20,38,10,38,2,Young Impulse Trendsetters
+C0860,51,Male,1673489,34,5,7142.6,14,68,6,8,14,3,Affluent Conservative Savers
+C0861,39,Male,294571,11,8,1199.57,16,41,6,10,8,4,Budget-Conscious Shoppers
+C0862,48,Female,251997,31,9,1372.95,16,68,5,11,10,4,Budget-Conscious Shoppers
+C0863,30,Female,437482,23,11,978.96,29,15,10,19,5,4,Budget-Conscious Shoppers
+C0864,49,Male,2236309,34,6,7093.42,12,59,6,6,7,3,Affluent Conservative Savers
+C0865,40,Female,502356,30,5,1405.04,13,41,5,8,11,4,Budget-Conscious Shoppers
+C0866,20,Female,450000,79,17,3609.66,52,5,43,9,43,2,Young Impulse Trendsetters
+C0867,25,Female,540553,76,22,3219.07,63,11,55,8,42,2,Young Impulse Trendsetters
+C0868,41,Female,1975812,89,30,7322.35,96,1,61,35,23,0,High-Value Champions
+C0869,41,Female,2235007,86,30,7537.71,112,9,62,50,25,0,High-Value Champions
+C0870,24,Male,666888,83,22,2438.8,63,20,48,15,37,2,Young Impulse Trendsetters
+C0871,23,Male,826031,83,24,2063.99,76,13,55,21,43,2,Young Impulse Trendsetters
+C0872,41,Female,2384080,95,31,7836.34,91,1,53,38,20,0,High-Value Champions
+C0873,34,Male,800159,48,6,2255.02,11,163,5,6,4,1,At-Risk Occasional Customers
+C0874,22,Male,608407,82,19,3062.86,47,1,35,12,41,2,Young Impulse Trendsetters
+C0875,44,Male,1969647,25,2,6267.7,6,80,2,4,13,3,Affluent Conservative Savers
+C0876,45,Female,914066,49,4,2998.57,7,174,3,4,3,1,At-Risk Occasional Customers
+C0877,38,Male,1815096,83,25,9560.24,89,11,50,39,32,0,High-Value Champions
+C0878,57,Male,2244134,20,3,7208.2,8,44,3,5,12,3,Affluent Conservative Savers
+C0879,33,Female,1914088,96,31,8510.06,95,10,46,49,26,0,High-Value Champions
+C0880,42,Male,2458531,74,28,10492.51,107,10,64,43,31,0,High-Value Champions
+C0881,46,Female,2094002,85,31,6901.87,93,6,48,45,31,0,High-Value Champions
+C0882,28,Female,663638,76,26,2692.18,68,15,54,14,38,2,Young Impulse Trendsetters
+C0883,41,Male,410949,14,8,1010.81,18,53,8,10,2,4,Budget-Conscious Shoppers
+C0884,39,Female,1977236,76,31,9655.12,88,23,55,33,23,0,High-Value Champions
+C0885,58,Female,2142795,21,6,7072.42,13,54,5,8,13,3,Affluent Conservative Savers
+C0886,40,Female,2116570,80,29,8508.76,96,8,55,41,33,0,High-Value Champions
+C0887,50,Male,2320705,25,7,7836.75,18,68,7,11,8,3,Affluent Conservative Savers
+C0888,28,Female,2098831,84,27,7332.61,86,1,54,32,24,0,High-Value Champions
+C0889,31,Male,1095043,44,5,2285.13,7,189,4,3,6,1,At-Risk Occasional Customers
+C0890,36,Female,314629,29,5,1011.89,11,56,4,7,5,4,Budget-Conscious Shoppers
+C0891,46,Male,1743885,26,6,7404.36,15,45,8,7,10,3,Affluent Conservative Savers
+C0892,54,Female,2118030,23,7,7343.77,15,34,6,9,10,3,Affluent Conservative Savers
+C0893,50,Female,2511263,23,4,5511.09,10,29,4,6,14,3,Affluent Conservative Savers
+C0894,42,Female,399505,22,7,1319.86,14,35,4,10,10,4,Budget-Conscious Shoppers
+C0895,40,Male,2111779,21,6,6517.33,17,47,7,10,10,3,Affluent Conservative Savers
+C0896,58,Female,381693,17,9,1102.0,22,35,8,14,9,4,Budget-Conscious Shoppers
+C0897,41,Female,1811959,25,5,7624.97,10,47,4,6,9,3,Affluent Conservative Savers
+C0898,26,Female,741936,86,24,2709.79,60,10,53,7,27,2,Young Impulse Trendsetters
+C0899,32,Female,258256,23,6,958.35,16,25,6,10,3,4,Budget-Conscious Shoppers
+C0900,46,Male,925734,43,5,2571.34,7,241,4,3,7,1,At-Risk Occasional Customers
+C0901,60,Female,1991409,18,4,6594.96,10,65,4,6,10,3,Affluent Conservative Savers
+C0902,40,Male,830765,54,3,3039.28,5,175,3,2,6,1,At-Risk Occasional Customers
+C0903,53,Male,453607,28,12,917.28,23,30,9,14,9,4,Budget-Conscious Shoppers
+C0904,32,Female,1951404,80,26,8554.54,92,4,43,49,27,0,High-Value Champions
+C0905,45,Female,1917715,92,25,9542.61,85,5,41,44,31,0,High-Value Champions
+C0906,20,Female,516167,86,20,2445.64,55,25,49,6,29,2,Young Impulse Trendsetters
+C0907,57,Female,1623426,14,3,8304.27,7,51,4,3,12,3,Affluent Conservative Savers
+C0908,60,Male,445766,23,6,1405.82,14,49,4,10,6,4,Budget-Conscious Shoppers
+C0909,58,Male,2319611,20,6,7932.16,13,63,6,7,8,3,Affluent Conservative Savers
+C0910,27,Male,779864,87,21,3204.38,52,35,38,14,29,2,Young Impulse Trendsetters
+C0911,60,Female,2458531,27,5,7997.34,10,51,5,5,14,3,Affluent Conservative Savers
+C0912,57,Female,2281755,19,7,6375.9,20,95,9,11,15,3,Affluent Conservative Savers
+C0913,36,Male,1550000,92,23,8909.34,65,6,31,34,30,0,High-Value Champions
+C0914,19,Female,799655,96,21,3031.6,52,14,38,14,35,2,Young Impulse Trendsetters
+C0915,49,Male,431949,26,8,678.38,19,29,5,14,8,4,Budget-Conscious Shoppers
+C0916,36,Female,2180214,82,24,5626.2,75,9,36,39,32,0,High-Value Champions
+C0917,51,Male,1051894,42,1,2209.24,3,116,1,2,7,1,At-Risk Occasional Customers
+C0918,56,Male,990357,44,2,2084.38,3,138,2,1,3,1,At-Risk Occasional Customers
+C0919,19,Male,852283,79,20,3511.66,59,8,52,7,36,2,Young Impulse Trendsetters
+C0920,33,Male,2681771,86,28,9168.32,80,6,46,34,20,0,High-Value Champions
+C0921,44,Female,2170202,79,24,7112.4,95,8,49,46,23,0,High-Value Champions
+C0922,42,Male,2018765,97,32,6528.75,102,11,61,41,25,0,High-Value Champions
+C0923,70,Male,2196868,15,5,7344.12,14,81,6,8,13,3,Affluent Conservative Savers
+C0924,27,Female,807637,92,20,2810.29,63,9,50,13,42,2,Young Impulse Trendsetters
+C0925,36,Female,253775,21,11,1290.16,25,80,6,19,8,4,Budget-Conscious Shoppers
+C0926,52,Male,396659,10,6,1687.71,12,49,5,7,4,4,Budget-Conscious Shoppers
+C0927,49,Female,527698,24,9,863.99,21,52,7,14,10,4,Budget-Conscious Shoppers
+C0928,35,Female,2335363,83,23,9375.5,68,16,34,34,33,0,High-Value Champions
+C0929,56,Male,387225,28,12,1045.59,26,17,9,17,6,4,Budget-Conscious Shoppers
+C0930,52,Male,1257810,34,2,2381.59,4,264,2,2,2,1,At-Risk Occasional Customers
+C0931,27,Female,629953,81,17,2527.72,38,1,33,5,42,2,Young Impulse Trendsetters
+C0932,64,Female,286512,31,7,1392.98,13,30,4,9,10,4,Budget-Conscious Shoppers
+C0933,55,Male,2388966,24,5,7750.21,10,59,4,6,7,3,Affluent Conservative Savers
+C0934,40,Female,303905,23,5,1290.91,10,39,2,8,8,4,Budget-Conscious Shoppers
+C0935,47,Female,2230463,81,33,10045.73,113,1,70,43,34,0,High-Value Champions
+C0936,28,Female,492909,24,10,988.42,24,73,10,14,9,4,Budget-Conscious Shoppers
+C0937,28,Female,763024,81,24,3784.82,53,12,44,9,36,2,Young Impulse Trendsetters
+C0938,45,Female,453723,25,7,1292.52,19,22,4,15,5,4,Budget-Conscious Shoppers
+C0939,37,Female,340334,28,9,1141.34,18,15,4,14,8,4,Budget-Conscious Shoppers
+C0940,39,Female,2001118,88,27,7575.69,100,5,61,39,23,0,High-Value Champions
+C0941,40,Male,999060,47,2,2371.37,4,125,2,2,2,1,At-Risk Occasional Customers
+C0942,47,Female,1104858,56,4,2343.54,8,126,4,4,2,1,At-Risk Occasional Customers
+C0943,23,Female,545581,90,19,2270.12,54,8,45,9,39,2,Young Impulse Trendsetters
+C0944,46,Female,1924650,9,3,7133.39,7,73,3,4,10,3,Affluent Conservative Savers
+C0945,25,Female,784274,83,19,2904.79,55,3,47,8,42,2,Young Impulse Trendsetters
+C0946,60,Female,878590,45,2,2296.0,4,178,2,2,3,1,At-Risk Occasional Customers
+C0947,20,Male,714513,84,19,2312.17,60,8,44,16,40,2,Young Impulse Trendsetters
+C0948,56,Female,2099610,28,6,10267.55,15,72,7,8,10,3,Affluent Conservative Savers
+C0949,55,Female,379665,23,8,1078.19,14,55,3,11,2,4,Budget-Conscious Shoppers
+C0950,19,Female,581095,88,16,2924.65,47,13,37,10,46,2,Young Impulse Trendsetters
+C0951,43,Male,966154,55,5,3334.8,7,181,4,3,8,1,At-Risk Occasional Customers
+C0952,22,Male,548533,85,21,2619.59,49,3,39,10,42,2,Young Impulse Trendsetters
+C0953,52,Male,2485606,22,6,7117.96,15,33,8,7,6,3,Affluent Conservative Savers
+C0954,33,Female,2107208,87,30,9218.61,99,3,53,46,41,0,High-Value Champions
+C0955,69,Female,2189822,28,8,7323.68,23,85,10,13,5,3,Affluent Conservative Savers
+C0956,68,Male,2529831,24,3,8967.09,7,38,3,4,13,3,Affluent Conservative Savers
+C0957,22,Female,592794,86,17,2284.12,39,20,32,7,40,2,Young Impulse Trendsetters
+C0958,50,Female,2065619,25,8,7522.24,18,34,7,11,12,3,Affluent Conservative Savers
+C0959,26,Female,648427,79,19,2401.97,50,4,36,14,34,2,Young Impulse Trendsetters
+C0960,35,Female,2061375,82,31,9716.96,108,6,57,51,31,0,High-Value Champions
+C0961,27,Female,751760,90,14,3136.18,38,16,32,6,46,2,Young Impulse Trendsetters
+C0962,22,Male,765742,87,25,2469.22,58,13,47,11,48,2,Young Impulse Trendsetters
+C0963,65,Female,1096677,54,3,2301.18,5,139,2,3,7,1,At-Risk Occasional Customers
+C0964,67,Female,1721985,27,5,8172.79,13,38,5,8,5,3,Affluent Conservative Savers
+C0965,57,Male,440900,24,6,949.38,12,28,4,8,10,4,Budget-Conscious Shoppers
+C0966,34,Male,1686436,80,25,9281.12,90,8,42,48,28,0,High-Value Champions
+C0967,41,Male,457333,34,6,1636.84,13,40,5,8,9,4,Budget-Conscious Shoppers
+C0968,46,Female,329800,31,8,1115.86,14,19,5,9,6,4,Budget-Conscious Shoppers
+C0969,36,Male,2663967,86,25,10547.45,88,11,54,34,37,0,High-Value Champions
+C0970,38,Female,436902,21,10,930.53,21,34,6,15,7,4,Budget-Conscious Shoppers
+C0971,49,Female,1030054,59,3,3065.77,6,126,3,3,3,1,At-Risk Occasional Customers
+C0972,38,Female,1847620,88,28,10126.99,95,10,44,51,31,0,High-Value Champions
+C0973,46,Female,475428,29,6,1128.96,14,52,4,10,11,4,Budget-Conscious Shoppers
+C0974,43,Male,1600000,26,7,5655.57,20,46,9,11,10,3,Affluent Conservative Savers
+C0975,36,Male,431190,30,5,1239.44,9,41,3,6,9,4,Budget-Conscious Shoppers
+C0976,22,Female,773817,78,23,2235.94,72,22,63,9,38,2,Young Impulse Trendsetters
+C0977,48,Female,352251,32,9,1190.25,19,40,4,15,7,4,Budget-Conscious Shoppers
+C0978,45,Female,2503612,17,4,6956.63,9,35,3,6,15,3,Affluent Conservative Savers
+C0979,39,Male,446360,18,6,1505.31,13,37,5,8,8,4,Budget-Conscious Shoppers
+C0980,52,Male,2216548,19,3,7683.36,7,75,2,5,12,3,Affluent Conservative Savers
+C0981,40,Male,2180391,84,29,9049.6,95,18,60,35,21,0,High-Value Champions
+C0982,50,Male,2237290,27,3,5714.23,7,49,4,3,15,3,Affluent Conservative Savers
+C0983,47,Male,928743,55,5,2390.09,9,287,5,4,4,1,At-Risk Occasional Customers
+C0984,48,Female,1684435,88,25,8355.86,93,11,50,43,17,0,High-Value Champions
+C0985,35,Female,292192,28,10,849.0,27,80,6,21,6,4,Budget-Conscious Shoppers
+C0986,40,Male,2305715,93,25,7939.16,88,20,57,31,15,0,High-Value Champions
+C0987,35,Female,476274,26,7,915.71,16,31,6,10,8,4,Budget-Conscious Shoppers
+C0988,49,Female,270414,21,7,1574.03,18,37,4,14,6,4,Budget-Conscious Shoppers
+C0989,26,Female,2101190,94,28,8302.87,80,5,41,39,28,0,High-Value Champions
+C0990,21,Female,741770,81,18,3059.16,50,21,42,8,37,2,Young Impulse Trendsetters
+C0991,41,Female,2137590,91,29,8006.19,113,11,66,47,28,0,High-Value Champions
+C0992,26,Male,752867,91,19,1988.51,42,13,37,5,39,2,Young Impulse Trendsetters
+C0993,44,Female,1844282,86,27,8363.45,106,28,66,40,31,0,High-Value Champions
+C0994,55,Male,2017035,22,9,5356.77,18,32,8,10,12,3,Affluent Conservative Savers
+C0995,35,Female,1918753,99,23,10027.44,76,5,43,33,15,0,High-Value Champions
+C0996,39,Male,1771992,89,35,7536.05,112,1,52,60,28,0,High-Value Champions
+C0997,40,Female,396392,24,11,1129.75,23,51,5,18,8,4,Budget-Conscious Shoppers
+C0998,42,Male,876626,49,4,2049.43,7,166,4,3,6,1,At-Risk Occasional Customers
+C0999,31,Female,390950,9,7,1123.6,14,38,5,9,10,4,Budget-Conscious Shoppers
+C1000,31,Male,2396503,89,27,8796.64,100,14,62,38,26,0,High-Value Champions

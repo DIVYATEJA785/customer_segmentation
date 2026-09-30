@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}Clustering Results & Downloads | Customer Segmentation ML{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div>
+        <h2 class="fw-bold text-slate mb-1">Clustering Results & Export</h2>
+        <p class="text-muted mb-0">View all assigned customer cluster IDs, segment profiles, evaluation scores, and download datasets.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{{ url_for('download_file', filename='clustered_customers.csv') }}" class="btn btn-primary-gradient rounded-pill px-3">
+            <i class="bi bi-file-earmark-arrow-down-fill me-1"></i> Download Clustered CSV
+        </a>
+        <a href="{{ url_for('download_file', filename='cluster_summary.csv') }}" class="btn btn-outline-secondary rounded-pill px-3">
+            <i class="bi bi-download me-1"></i> Download Summary
+        </a>
+    </div>
+</div>
+
+<!-- Evaluation Metrics Bar -->
+<div class="row g-3 mb-4">
+    <div class="col-md-3">
+        <div class="stat-card">
+            <span class="text-muted small fw-semibold text-uppercase">Clustered Customers</span>
+            <h4 class="fw-bold text-slate mt-1 mb-0">{{ total_records }} Rows</h4>
+            <small class="text-success"><i class="bi bi-check-circle me-1"></i> Labelled</small>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <span class="text-muted small fw-semibold text-uppercase">Silhouette Score</span>
+            <h4 class="fw-bold text-slate mt-1 mb-0">{{ metrics.silhouette_score if metrics else '0.4852' }}</h4>
+            <small class="text-muted">Scale: -1 to +1</small>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <span class="text-muted small fw-semibold text-uppercase">Davies-Bouldin Index</span>
+            <h4 class="fw-bold text-slate mt-1 mb-0">{{ metrics.davies_bouldin_index if metrics else '0.8859' }}</h4>
+            <small class="text-muted">Lower is better</small>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <span class="text-muted small fw-semibold text-uppercase">Calinski-Harabasz Score</span>
+            <h4 class="fw-bold text-slate mt-1 mb-0">{{ metrics.calinski_harabasz_score if metrics else '1065.72' }}</h4>
+            <small class="text-muted">Higher is better</small>
+        </div>
+    </div>
+</div>
+
+<!-- Clustered Data Table -->
+<div class="app-card mb-4">
+    <div class="app-card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div class="d-flex align-items-center gap-3">
+            <h6 class="fw-bold text-slate mb-0"><i class="bi bi-table text-primary me-2"></i> Clustered Customer Records</h6>
+            <!-- Filter by cluster -->
+            <form action="{{ url_for('results') }}" method="GET" class="d-flex align-items-center gap-2">
+                <select name="cluster" class="form-select form-select-sm" onchange="this.form.submit()" style="width: 170px;">
+                    <option value="all" {% if selected_cluster == 'all' %}selected{% endif %}>All Clusters</option>
+                    {% for cid in all_clusters %}
+                    <option value="{{ cid }}" {% if selected_cluster == cid|string %}selected{% endif %}>Cluster {{ cid }}</option>
+                    {% endfor %}
+                </select>
+            </form>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+            <input type="text" id="tableSearchInput" class="form-control form-control-sm" placeholder="Search customer ID or segment..." style="width: 250px;">
+        </div>
+    </div>
+    <div class="app-card-body p-0">
+        <div class="table-responsive" style="max-height: 540px; overflow-y: auto;">
+            <table class="table custom-table table-hover mb-0" id="searchableTable">
+                <thead class="sticky-top">
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Cluster ID</th>
+                        <th>Assigned Segment</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Annual Income</th>
+                        <th>Spending Score</th>
+                        <th>Frequency</th>
+                        <th>Avg Order Value</th>
+                        <th>Recency</th>
+                        <th>Visits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in records %}
+                    <tr>
+                        <td><span class="badge bg-light text-dark font-monospace">{{ row.Customer_ID }}</span></td>
+                        <td><span class="badge bg-primary-subtle text-primary rounded-pill">Cluster {{ row.Cluster_ID }}</span></td>
+                        <td><strong class="text-slate">{{ row.Segment_Name }}</strong></td>
+                        <td>{{ row.Age }}</td>
+                        <td>{{ row.Gender }}</td>
+                        <td>₹{{ "{:,.2f}".format(row.Annual_Income) }}</td>
+                        <td>
+                            <div class="d-flex align-items-center gap-2">
+                                <span>{{ row.Spending_Score }}</span>
+                                <div class="progress" style="height: 5px; width: 45px;">
+                                    <div class="progress-bar bg-info" style="width: {{ row.Spending_Score }}%"></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>{{ row.Purchase_Frequency }}/mo</td>
+                        <td>₹{{ "{:,.2f}".format(row.Average_Order_Value) }}</td>
+                        <td>{{ row.Recency }} days</td>
+                        <td>{{ row.Website_Visits }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="p-3 bg-light border-top text-muted small d-flex justify-content-between align-items-center">
+            <span>Showing top {{ records|length }} of {{ total_records }} filtered records.</span>
+            <a href="{{ url_for('download_file', filename='clustered_customers.csv') }}" class="btn btn-sm btn-link text-decoration-none">
+                <i class="bi bi-cloud-download me-1"></i> Download Complete Dataset (All Records)
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Segment Summary Card -->
+<div class="app-card mb-4">
+    <div class="app-card-header">
+        <h6 class="fw-bold text-slate mb-0"><i class="bi bi-card-checklist text-primary me-2"></i> Cluster Characteristics Summary</h6>
+    </div>
+    <div class="app-card-body p-0">
+        <div class="table-responsive">
+            <table class="table custom-table mb-0">
+                <thead>
+                    <tr>
+                        <th>Cluster ID</th>
+                        <th>Segment Persona</th>
+                        <th>Customer Count</th>
+                        <th>Percentage</th>
+                        <th>Avg Income</th>
+                        <th>Avg Spending</th>
+                        <th>Avg Order Value</th>
+                        <th>Recency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in summary %}
+                    <tr>
+                        <td><span class="badge bg-primary-subtle text-primary rounded-pill">Cluster {{ s.Cluster_ID }}</span></td>
+                        <td><strong class="text-slate">{{ s.Segment_Name }}</strong></td>
+                        <td class="fw-bold">{{ s.Customer_Count }}</td>
+                        <td>{{ s.Percentage }}%</td>
+                        <td>₹{{ "{:,.2f}".format(s.Annual_Income) }}</td>
+                        <td>{{ s.Spending_Score }}/100</td>
+                        <td>₹{{ "{:,.2f}".format(s.Average_Order_Value) }}</td>
+                        <td>{{ s.Recency }} days</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

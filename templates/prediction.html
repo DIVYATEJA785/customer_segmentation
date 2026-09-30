@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block title %}Predict Customer Segment | Machine Learning Clustering{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div>
+        <h2 class="fw-bold text-slate mb-1">Customer Segment Prediction</h2>
+        <p class="text-muted mb-0">Enter a customer's demographic and purchasing attributes to classify them into their behavioral cluster in real time.</p>
+    </div>
+    <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary rounded-pill px-3">
+        <i class="bi bi-speedometer2 me-1"></i> Back to Dashboard
+    </a>
+</div>
+
+<!-- Quick Persona Presets -->
+<div class="app-card mb-4">
+    <div class="app-card-body py-3">
+        <div class="d-flex flex-wrap align-items-center gap-2">
+            <span class="text-muted small fw-bold text-uppercase me-2"><i class="bi bi-lightning-charge text-warning me-1"></i> Quick Presets:</span>
+            <button type="button" class="preset-pill" onclick="fillSampleData('high_value')">
+                <i class="bi bi-gem text-success me-1"></i> High-Value Champion
+            </button>
+            <button type="button" class="preset-pill" onclick="fillSampleData('budget')">
+                <i class="bi bi-tag text-secondary me-1"></i> Budget-Conscious Shopper
+            </button>
+            <button type="button" class="preset-pill" onclick="fillSampleData('trendsetter')">
+                <i class="bi bi-phone text-primary me-1"></i> Young Trendsetter
+            </button>
+            <button type="button" class="preset-pill" onclick="fillSampleData('conservative')">
+                <i class="bi bi-shield-lock text-info me-1"></i> Conservative Saver
+            </button>
+            <button type="button" class="preset-pill" onclick="fillSampleData('at_risk')">
+                <i class="bi bi-exclamation-octagon text-danger me-1"></i> At-Risk Occasional
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Customer Input Form -->
+    <div class="col-lg-7">
+        <div class="app-card" id="predictionForm">
+            <div class="app-card-header">
+                <h6 class="fw-bold text-slate mb-0"><i class="bi bi-ui-checks text-primary me-2"></i> Customer Profile Attributes</h6>
+                <small class="text-muted">Scaled via StandardScaler</small>
+            </div>
+            <div class="app-card-body">
+                <form action="{{ url_for('predict') }}" method="POST">
+                    <div class="row g-3">
+                        <!-- Demographics -->
+                        <div class="col-md-6">
+                            <label for="age" class="form-label">Age (Years) <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="age" name="age" min="15" max="100" value="38" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="gender" class="form-label">Gender <span class="text-danger">*</span></label>
+                            <select class="form-select" id="gender" name="gender" required>
+                                <option value="Female" selected>Female</option>
+                                <option value="Male">Male</option>
+                            </select>
+                        </div>
+
+                        <!-- Financials -->
+                        <div class="col-md-6">
+                            <label for="income" class="form-label">Annual Income (₹) <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text">₹</span>
+                                <input type="number" class="form-control" id="income" name="income" min="50000" max="5000000" step="5000" value="2100000" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="spending" class="form-label">Spending Score (1-100) <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="spending" name="spending" min="1" max="100" value="88" required>
+                        </div>
+
+                        <!-- Purchasing Behavior -->
+                        <div class="col-md-6">
+                            <label for="frequency" class="form-label">Purchase Frequency (Orders/Month) <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="frequency" name="frequency" min="1" max="60" value="30" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="aov" class="form-label">Average Order Value (₹) <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text">₹</span>
+                                <input type="number" class="form-control" id="aov" name="aov" min="100" max="50000" step="50" value="8500" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="total_purchases" class="form-label">Total Purchases (All Time) <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="total_purchases" name="total_purchases" min="1" max="500" value="95" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="recency" class="form-label">Recency (Days Since Last Order) <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="recency" name="recency" min="1" max="400" value="7" required>
+                        </div>
+
+                        <!-- Channel Activity -->
+                        <div class="col-md-4">
+                            <label for="online" class="form-label">Online Purchases <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="online" name="online" min="0" max="300" value="54" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="offline" class="form-label">Offline Purchases <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="offline" name="offline" min="0" max="300" value="41" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="visits" class="form-label">Website Visits/Mo <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="visits" name="visits" min="0" max="100" value="30" required>
+                        </div>
+
+                        <div class="col-12 mt-4">
+                            <button type="submit" class="btn btn-primary-gradient w-100 py-2 fs-6">
+                                <i class="bi bi-diagram-3-fill me-2"></i> Predict Cluster
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prediction Output Card -->
+    <div class="col-lg-5">
+        {% if prediction %}
+        <div class="app-card border-primary prediction-box shadow-sm">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge bg-primary px-3 py-2 rounded-pill fs-6">
+                    Customer belongs to Cluster {{ prediction.cluster_id }}
+                </span>
+                <span class="badge bg-light text-dark border">Distance: {{ prediction.distance }}</span>
+            </div>
+
+            <h3 class="fw-bold text-slate mb-2">{{ prediction.segment_name }}</h3>
+            <p class="text-muted mb-4">{{ prediction.description }}</p>
+
+            <div class="card bg-light border-0 rounded-3 p-3 mb-4">
+                <h6 class="fw-bold text-slate mb-2"><i class="bi bi-bullseye text-primary me-2"></i> Actionable Business Strategy</h6>
+                <p class="text-dark small mb-0">{{ prediction.strategy }}</p>
+            </div>
+
+            <h6 class="fw-bold text-slate mb-2">Cluster Benchmark Comparison</h6>
+            <div class="table-responsive">
+                <table class="table table-sm table-bordered custom-table mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Metric</th>
+                            <th>Input Value</th>
+                            <th>Cluster Avg</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Annual Income</td>
+                            <td class="fw-semibold">{{ prediction.input_data.Annual_Income }}</td>
+                            <td class="text-muted">₹{{ "{:,.2f}".format(prediction.cluster_stats.avg_income) }}</td>
+                        </tr>
+                        <tr>
+                            <td>Spending Score</td>
+                            <td class="fw-semibold">{{ prediction.input_data.Spending_Score }}/100</td>
+                            <td class="text-muted">{{ prediction.cluster_stats.avg_spending }}/100</td>
+                        </tr>
+                        <tr>
+                            <td>Avg Order Value</td>
+                            <td class="fw-semibold">{{ prediction.input_data.Average_Order_Value }}</td>
+                            <td class="text-muted">₹{{ "{:,.2f}".format(prediction.cluster_stats.avg_aov) }}</td>
+                        </tr>
+                        <tr>
+                            <td>Recency</td>
+                            <td class="fw-semibold">{{ prediction.input_data.Recency }}</td>
+                            <td class="text-muted">{{ prediction.cluster_stats.avg_recency }} days</td>
+                        </tr>
+                        <tr>
+                            <td>Customer Age</td>
+                            <td class="fw-semibold">{{ prediction.input_data.Age }} yrs</td>
+                            <td class="text-muted">{{ prediction.cluster_stats.avg_age }} yrs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-4 text-center">
+                <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline-primary rounded-pill px-4">
+                    <i class="bi bi-bar-chart-line me-1"></i> View Segment on Dashboard
+                </a>
+            </div>
+        </div>
+        {% else %}
+        <div class="app-card text-center py-5">
+            <div class="p-4">
+                <div class="stat-icon bg-primary-subtle text-primary mx-auto mb-3" style="width: 64px; height: 64px; font-size: 2rem;">
+                    <i class="bi bi-cpu"></i>
+                </div>
+                <h5 class="fw-bold text-slate">No Prediction Generated Yet</h5>
+                <p class="text-muted small mb-4">
+                    Enter customer demographic and transaction metrics on the left form, or click any of the 
+                    quick presets above, then click <strong>Predict Cluster</strong> to see real-time segment classification.
+                </p>
+                <div class="p-3 bg-light rounded-3 text-start small border">
+                    <span class="fw-bold d-block mb-1 text-slate"><i class="bi bi-lightbulb-fill text-warning me-1"></i> How it works:</span>
+                    <span>1. Input vector is normalized using <code>StandardScaler</code>.</span><br>
+                    <span>2. Euclidean distance is computed against K-Means cluster centers.</span><br>
+                    <span>3. Closest centroid index assigns the customer segment persona and strategies.</span>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
