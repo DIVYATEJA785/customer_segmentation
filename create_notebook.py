@@ -1,0 +1,408 @@
+import json
+
+notebook_content = {
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Customer Segmentation Using Machine Learning-Based Clustering\n",
+    "### End-to-End B.Tech CSE Academic Project\n",
+    "\n",
+    "## 1. Project Overview & Objective\n",
+    "Customer segmentation is the process of partitioning a company's customer base into distinct sub-groups based on shared characteristics, behaviors, and financial profiles. In retail and e-commerce, customer segmentation enables personalized marketing, improved customer retention, and optimal resource allocation.\n",
+    "\n",
+    "In this project, we implement an **unsupervised machine learning** pipeline centered around the **K-Means Clustering** algorithm to automatically categorize customers based on:\n",
+    "- Demographics (`Age`, `Gender`)\n",
+    "- Financial capability (`Annual_Income`)\n",
+    "- Behavioral indicators (`Spending_Score`, `Purchase_Frequency`, `Average_Order_Value`, `Recency`, `Website_Visits`)\n",
+    "- Channel preference (`Online_Purchases`, `Offline_Purchases`)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2. Importing Required Libraries"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import os\n",
+    "import joblib\n",
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "import seaborn as sns\n",
+    "from sklearn.cluster import KMeans\n",
+    "from sklearn.preprocessing import StandardScaler\n",
+    "from sklearn.decomposition import PCA\n",
+    "from sklearn.metrics import silhouette_score, davies_bouldin_score, calinski_harabasz_score\n",
+    "\n",
+    "# Plotting styles\n",
+    "plt.style.use('seaborn-v0_8-whitegrid')\n",
+    "plt.rcParams['figure.figsize'] = (10, 6)\n",
+    "plt.rcParams['font.size'] = 11\n",
+    "print(\"Libraries successfully imported!\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3. Ingesting the Customer Dataset"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "dataset_path = 'dataset/customers.csv'\n",
+    "df = pd.read_csv(dataset_path)\n",
+    "print(f\"Dataset Shape: {df.shape[0]} rows, {df.shape[1]} columns\")\n",
+    "df.head()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4. Data Preprocessing & Cleaning\n",
+    "1. Inspect dataset structure and data types\n",
+    "2. Check for missing values\n",
+    "3. Check for duplicate records\n",
+    "4. Encode categorical variables (`Gender` -> Binary: Female=0, Male=1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Dataset information\n",
+    "df.info()\n",
+    "\n",
+    "# Missing values check\n",
+    "print(\"\\nMissing values count:\")\n",
+    "print(df.isnull().sum())\n",
+    "\n",
+    "# Check duplicates\n",
+    "print(f\"\\nDuplicate rows: {df.duplicated().sum()}\")\n",
+    "\n",
+    "# Numerical descriptive statistics\n",
+    "df.describe().T"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Encode Gender to binary\n",
+    "df['Gender_Encoded'] = df['Gender'].map({'Female': 0, 'Male': 1})\n",
+    "\n",
+    "# Numerical features selected for clustering\n",
+    "features = ['Gender_Encoded', 'Age', 'Annual_Income', 'Spending_Score', 'Purchase_Frequency',\n",
+    "            'Average_Order_Value', 'Total_Purchases', 'Recency',\n",
+    "            'Online_Purchases', 'Offline_Purchases', 'Website_Visits']\n",
+    "X = df[features]\n",
+    "print(f\"Selected feature matrix shape: {X.shape}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5. Exploratory Data Analysis (EDA)\n",
+    "Visualizing distribution of income, spending scores, and relationships among customer metrics."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n",
+    "\n",
+    "sns.histplot(df['Annual_Income'], kde=True, ax=axes[0, 0], color='#4f46e5')\n",
+    "axes[0, 0].set_title('Annual Income Distribution ($)', fontweight='bold')\n",
+    "\n",
+    "sns.histplot(df['Spending_Score'], kde=True, ax=axes[0, 1], color='#06b6d4')\n",
+    "axes[0, 1].set_title('Spending Score Distribution (1-100)', fontweight='bold')\n",
+    "\n",
+    "sns.histplot(df['Age'], kde=True, ax=axes[1, 0], color='#10b981')\n",
+    "axes[1, 0].set_title('Age Distribution (Years)', fontweight='bold')\n",
+    "\n",
+    "sns.scatterplot(x='Annual_Income', y='Spending_Score', hue='Gender', data=df, ax=axes[1, 1], alpha=0.7)\n",
+    "axes[1, 1].set_title('Annual Income vs Spending Score', fontweight='bold')\n",
+    "\n",
+    "plt.tight_layout()\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Correlation Heatmap\n",
+    "plt.figure(figsize=(10, 8))\n",
+    "num_cols = ['Age', 'Annual_Income', 'Spending_Score', 'Purchase_Frequency', 'Average_Order_Value', 'Total_Purchases', 'Recency', 'Website_Visits']\n",
+    "sns.heatmap(df[num_cols].corr(), annot=True, fmt='.2f', cmap='coolwarm', square=True, linewidths=0.5)\n",
+    "plt.title('Correlation Matrix of Customer Features', fontweight='bold', fontsize=13)\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6. Feature Scaling with StandardScaler\n",
+    "K-Means computes Euclidean distances between vectors. Features with larger numeric ranges (e.g., Annual Income: \\$15,000 to \\$150,000) would dominate features with smaller scales (e.g., Age: 18 to 70 or Spending Score: 1 to 100). Normalizing with `StandardScaler` ($\mu=0, \sigma=1$) is crucial."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "scaler = StandardScaler()\n",
+    "X_scaled = scaler.fit_transform(X)\n",
+    "print(f\"Scaled Feature Matrix Mean: {X_scaled.mean():.4f}, Std: {X_scaled.std():.4f}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 7. Determining Optimal K: Elbow Method & Silhouette Analysis\n",
+    "We evaluate cluster candidate sizes from $K=2$ to $K=10$ using:\n",
+    "1. **WCSS / Inertia** (Within-Cluster Sum of Squares) for the Elbow Method\n",
+    "2. **Silhouette Score** (Measure of cohesion vs separation)\n",
+    "3. **Davies-Bouldin Index** (Ratio of within-cluster distance to between-cluster separation)\n",
+    "4. **Calinski-Harabasz Score** (Variance Ratio Criterion)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "k_range = range(2, 11)\n",
+    "wcss = []\n",
+    "sil_scores = []\n",
+    "db_scores = []\n",
+    "ch_scores = []\n",
+    "\n",
+    "for k in k_range:\n",
+    "    km = KMeans(n_clusters=k, init='k-means++', n_init=15, max_iter=300, random_state=42)\n",
+    "    labels = km.fit_predict(X_scaled)\n",
+    "    wcss.append(km.inertia_)\n",
+    "    sil_scores.append(silhouette_score(X_scaled, labels))\n",
+    "    db_scores.append(davies_bouldin_score(X_scaled, labels))\n",
+    "    ch_scores.append(calinski_harabasz_score(X_scaled, labels))\n",
+    "\n",
+    "eval_df = pd.DataFrame({\n",
+    "    'K': list(k_range),\n",
+    "    'WCSS (Inertia)': np.round(wcss, 2),\n",
+    "    'Silhouette Score': np.round(sil_scores, 4),\n",
+    "    'Davies-Bouldin Index': np.round(db_scores, 4),\n",
+    "    'Calinski-Harabasz Score': np.round(ch_scores, 2)\n",
+    "})\n",
+    "eval_df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 5))\n",
+    "\n",
+    "# Elbow Curve\n",
+    "ax1.plot(list(k_range), wcss, marker='o', color='#4f46e5', linewidth=2.5)\n",
+    "ax1.axvline(x=5, color='red', linestyle='--', label='Optimal K=5')\n",
+    "ax1.set_title('Elbow Method (WCSS vs K)', fontweight='bold')\n",
+    "ax1.set_xlabel('Number of Clusters (K)')\n",
+    "ax1.set_ylabel('Inertia (WCSS)')\n",
+    "ax1.legend()\n",
+    "\n",
+    "# Silhouette Curve\n",
+    "ax2.plot(list(k_range), sil_scores, marker='s', color='#06b6d4', linewidth=2.5)\n",
+    "ax2.axvline(x=5, color='red', linestyle='--', label='Optimal K=5')\n",
+    "ax2.set_title('Silhouette Score vs K', fontweight='bold')\n",
+    "ax2.set_xlabel('Number of Clusters (K)')\n",
+    "ax2.set_ylabel('Silhouette Score')\n",
+    "ax2.legend()\n",
+    "\n",
+    "plt.tight_layout()\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 8. Training Final K-Means Model ($K=5$)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "final_k = 5\n",
+    "kmeans = KMeans(n_clusters=final_k, init='k-means++', n_init=25, max_iter=500, random_state=42)\n",
+    "df['Cluster_ID'] = kmeans.fit_predict(X_scaled)\n",
+    "print(\"Final model trained successfully!\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 9. Dynamic Cluster Profiling & Segment Interpretation"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "summary = df.groupby('Cluster_ID')[['Age', 'Annual_Income', 'Spending_Score', 'Purchase_Frequency', 'Average_Order_Value', 'Recency', 'Online_Purchases', 'Offline_Purchases']].mean().round(2)\n",
+    "summary['Count'] = df['Cluster_ID'].value_counts().sort_index()\n",
+    "summary['Percentage'] = (summary['Count'] / len(df) * 100).round(2)\n",
+    "\n",
+    "# Dynamic labeling rule (INR \u20b9)\n",
+    "def label_segment(row):\n",
+    "    if row['Annual_Income'] >= 1500000 and row['Spending_Score'] >= 60:\n",
+    "        return \"High-Value Champions\"\n",
+    "    elif row['Annual_Income'] >= 1500000 and row['Spending_Score'] < 45:\n",
+    "        return \"Affluent Conservative Savers\"\n",
+    "    elif row['Annual_Income'] < 1200000 and row['Spending_Score'] >= 65 and row['Age'] < 35:\n",
+    "        return \"Young Impulse Trendsetters\"\n",
+    "    elif row['Recency'] >= 100:\n",
+    "        return \"At-Risk Occasional Customers\"\n",
+    "    elif row['Annual_Income'] < 700000 and row['Spending_Score'] < 50:\n",
+    "        return \"Budget-Conscious Shoppers\"\n",
+    "    else:\n",
+    "        return \"Steady Core Customers\"\n",
+    "\n",
+    "summary['Segment_Name'] = summary.apply(label_segment, axis=1)\n",
+    "df['Segment_Name'] = df['Cluster_ID'].map(summary['Segment_Name'])\n",
+    "summary[['Segment_Name', 'Count', 'Percentage', 'Annual_Income', 'Spending_Score', 'Average_Order_Value', 'Recency']]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 10. Visualizing Discovered Segments"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 2D PCA Cluster Projection\n",
+    "pca = PCA(n_components=2, random_state=42)\n",
+    "pca_coords = pca.fit_transform(X_scaled)\n",
+    "df['PCA1'] = pca_coords[:, 0]\n",
+    "df['PCA2'] = pca_coords[:, 1]\n",
+    "\n",
+    "plt.figure(figsize=(10, 6))\n",
+    "sns.scatterplot(x='PCA1', y='PCA2', hue='Segment_Name', data=df, palette='tab10', s=70, alpha=0.8, edgecolor='black', linewidth=0.5)\n",
+    "plt.title(f'2D PCA Projection of Customer Clusters (Variance: {pca.explained_variance_ratio_.sum()*100:.1f}%)', fontweight='bold')\n",
+    "plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left')\n",
+    "plt.tight_layout()\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 11. Model Persistence (Saving with Joblib)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "os.makedirs('model', exist_ok=True)\n",
+    "joblib.dump(kmeans, 'model/kmeans_model.pkl')\n",
+    "joblib.dump(scaler, 'model/scaler.pkl')\n",
+    "print(\"Trained model and scaler successfully serialized!\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 12. Inference on New Customer\n",
+    "Example prediction simulating the Flask web app backend."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example new customer input\n",
+    "new_customer = pd.DataFrame([{\n",
+    "    'Gender_Encoded': 0, # Female\n",
+    "    'Age': 24,\n",
+    "    'Annual_Income': 720000,\n",
+    "    'Spending_Score': 85,\n",
+    "    'Purchase_Frequency': 22,\n",
+    "    'Average_Order_Value': 2800,\n",
+    "    'Total_Purchases': 55,\n",
+    "    'Recency': 10,\n",
+    "    'Online_Purchases': 45,\n",
+    "    'Offline_Purchases': 10,\n",
+    "    'Website_Visits': 38\n",
+    "}])\n",
+    "\n",
+    "# Scale using fitted scaler\n",
+    "scaled_input = scaler.transform(new_customer)\n",
+    "predicted_cluster = int(kmeans.predict(scaled_input)[0])\n",
+    "predicted_name = summary.loc[predicted_cluster, 'Segment_Name']\n",
+    "\n",
+    "print(f\"-> Customer belongs to Cluster {predicted_cluster}: {predicted_name}\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "language_info": {
+   "name": "python",
+   "version": "3.13.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
+
+with open('customer_segmentation.ipynb', 'w') as f:
+    json.dump(notebook_content, f, indent=1)
+
+print("customer_segmentation.ipynb generated successfully!")
